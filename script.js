@@ -251,56 +251,58 @@ if (window.matchMedia?.('(pointer:fine)').matches) {
   });
 }
 
-/* Interactive studio scenography */
+/* Interactive studio scenography — light, smooth 3D */
 const studio = document.querySelector('.studio-scene');
 const studioViewport = document.querySelector('.studio-viewport');
 if (studio && studioViewport) {
-  let studioTicking = false;
-  const updateStudio = () => {
+  let studioFrame = 0, targetP = 0, currentP = 0, targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+  const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  const clamp01 = value => Math.min(1, Math.max(0, value));
+  const renderStudio = () => {
+    currentP += (targetP - currentP) * (reduceMotion ? 1 : .12);
+    currentX += (targetX - currentX) * (reduceMotion ? 1 : .12);
+    currentY += (targetY - currentY) * (reduceMotion ? 1 : .12);
+    const p = clamp01(currentP);
+    studio.style.setProperty('--studio-scroll', p.toFixed(3));
+    studio.style.setProperty('--studio-stage-y', (-24 * p).toFixed(1) + 'px');
+    studio.style.setProperty('--studio-scale', (1 + p * .012).toFixed(4));
+    studio.style.setProperty('--studio-center-z', (55 + p * 70).toFixed(1) + 'px');
+    studio.style.setProperty('--studio-side-z', (p * 18).toFixed(1) + 'px');
+    studio.style.setProperty('--studio-center-rot', (currentX * -.045).toFixed(2) + 'deg');
+    studio.style.setProperty('--studio-left-rot', (20 + p * 2.5).toFixed(2) + 'deg');
+    studio.style.setProperty('--studio-right-rot', (-20 - p * 2.5).toFixed(2) + 'deg');
+    studio.style.setProperty('--studio-glow-a', (.10 + p * .05).toFixed(3));
+    studio.style.setProperty('--studio-glow-b', (.08 + p * .04).toFixed(3));
+    studio.style.setProperty('--studio-beam-a', (.08 + p * .035).toFixed(3));
+    studio.style.setProperty('--studio-beam-b', (.08 + p * .035).toFixed(3));
+    studio.style.setProperty('--studio-glow-ax', (p * 28).toFixed(1) + 'px');
+    studio.style.setProperty('--studio-glow-ay', (-p * 14).toFixed(1) + 'px');
+    studio.style.setProperty('--studio-glow-bx', (-p * 24).toFixed(1) + 'px');
+    studio.style.setProperty('--studio-glow-by', (p * 16).toFixed(1) + 'px');
+    studio.style.setProperty('--studio-beam-ax', (p * 16).toFixed(1) + 'px');
+    studio.style.setProperty('--studio-beam-bx', (-p * 16).toFixed(1) + 'px');
+    studio.style.setProperty('--studio-light', (.16 + p * .08).toFixed(3));
+    studio.style.setProperty('--studio-light-scale', (.8 + p * .20).toFixed(3));
+    if (!reduceMotion && (Math.abs(targetP-currentP)>.001 || Math.abs(targetX-currentX)>.05 || Math.abs(targetY-currentY)>.05)) studioFrame=requestAnimationFrame(renderStudio);
+    else studioFrame=0;
+  };
+  const requestStudioFrame = () => { if (!studioFrame) studioFrame=requestAnimationFrame(renderStudio); };
+  const updateTarget = () => {
     const rect = studio.getBoundingClientRect();
     const range = Math.max(1, studio.offsetHeight - window.innerHeight);
-    const progress = Math.min(1, Math.max(0, -rect.top / range));
-    const p = progress;
-    studio.style.setProperty('--studio-scroll', p.toFixed(3));
-    studio.style.setProperty('--studio-stage-y', `${(-28 * p).toFixed(1)}px`);
-    studio.style.setProperty('--studio-scale', (1 + p * 0.016).toFixed(4));
-    studio.style.setProperty('--studio-center-z', `${(55 + p * 85).toFixed(1)}px`);
-    studio.style.setProperty('--studio-side-z', `${(p * 22).toFixed(1)}px`);
-    studio.style.setProperty('--studio-center-rot', `${(p * -0.8).toFixed(2)}deg`);
-    studio.style.setProperty('--studio-left-rot', `${(20 + p * 3).toFixed(2)}deg`);
-    studio.style.setProperty('--studio-right-rot', `${(-20 - p * 3).toFixed(2)}deg`);
-    studio.style.setProperty('--studio-glow-a', (0.10 + p * 0.07).toFixed(3));
-    studio.style.setProperty('--studio-glow-b', (0.08 + p * 0.06).toFixed(3));
-    studio.style.setProperty('--studio-beam-a', (0.08 + p * 0.05).toFixed(3));
-    studio.style.setProperty('--studio-beam-b', (0.08 + p * 0.05).toFixed(3));
-    studio.style.setProperty('--studio-glow-ax', `${(p * 36).toFixed(1)}px`);
-    studio.style.setProperty('--studio-glow-ay', `${(-p * 18).toFixed(1)}px`);
-    studio.style.setProperty('--studio-glow-bx', `${(-p * 32).toFixed(1)}px`);
-    studio.style.setProperty('--studio-glow-by', `${(p * 20).toFixed(1)}px`);
-    studio.style.setProperty('--studio-beam-ax', `${(p * 22).toFixed(1)}px`);
-    studio.style.setProperty('--studio-beam-bx', `${(-p * 22).toFixed(1)}px`);
-    studio.style.setProperty('--studio-light', (0.16 + p * 0.12).toFixed(3));
-    studio.style.setProperty('--studio-light-scale', (0.8 + p * 0.28).toFixed(3));
-    studioTicking = false;
+    targetP = clamp01(-rect.top / range);
+    requestStudioFrame();
   };
-  addEventListener('scroll', () => {
-    if (studioTicking) return;
-    studioTicking = true;
-    requestAnimationFrame(updateStudio);
-  }, { passive: true });
-  updateStudio();
-
-  if (window.matchMedia?.('(pointer:fine)').matches) {
+  addEventListener('scroll', updateTarget, {passive:true});
+  addEventListener('resize', updateTarget, {passive:true});
+  updateTarget();
+  if (!reduceMotion && window.matchMedia?.('(pointer:fine)').matches) {
     studioViewport.addEventListener('pointermove', e => {
       const rect = studioViewport.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width - .5) * 2;
-      const y = ((e.clientY - rect.top) / rect.height - .5) * 2;
-      studio.style.setProperty('--studio-x', (x * 16).toFixed(2));
-      studio.style.setProperty('--studio-y', (y * 12).toFixed(2));
-    }, { passive: true });
-    studioViewport.addEventListener('pointerleave', () => {
-      studio.style.setProperty('--studio-x', '0');
-      studio.style.setProperty('--studio-y', '0');
-    });
+      targetX = (((e.clientX - rect.left) / rect.width) - .5) * 12;
+      targetY = (((e.clientY - rect.top) / rect.height) - .5) * 9;
+      requestStudioFrame();
+    }, {passive:true});
+    studioViewport.addEventListener('pointerleave', () => { targetX=0; targetY=0; requestStudioFrame(); });
   }
 }
