@@ -268,6 +268,9 @@ if (studio && studioViewport) {
     studio.style.setProperty('--studio-scale', (1 + p * .012).toFixed(4));
     studio.style.setProperty('--studio-center-z', (55 + p * 70).toFixed(1) + 'px');
     studio.style.setProperty('--studio-side-z', (p * 18).toFixed(1) + 'px');
+    studio.style.setProperty('--studio-center-x', (currentX * .18).toFixed(2) + 'px');
+    studio.style.setProperty('--studio-center-y', (currentY * .18).toFixed(2) + 'px');
+    studio.style.setProperty('--studio-side-x', (currentX * .45).toFixed(2) + 'px');
     studio.style.setProperty('--studio-center-rot', (currentX * -.045).toFixed(2) + 'deg');
     studio.style.setProperty('--studio-left-rot', (20 + p * 2.5).toFixed(2) + 'deg');
     studio.style.setProperty('--studio-right-rot', (-20 - p * 2.5).toFixed(2) + 'deg');
