@@ -37,3 +37,21 @@ section{content-visibility:auto;contain-intrinsic-size:1px 700px}
 .hp-field{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
 @media(max-width:720px){.cookie-banner{left:10px;right:10px;bottom:10px;align-items:flex-start;flex-direction:column}.cookie-actions{width:100%;justify-content:stretch}.cookie-actions .btn{flex:1}.footer-links{gap:10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.marquee div{animation:none}.command-caret{animation:none}}
+
+/* Legal pages / 404 */
+.legal-page{min-height:100vh;background:radial-gradient(circle at 80% 10%,rgba(99,92,255,.10),transparent 30%),var(--bg)}
+.legal-wrap{width:min(860px,calc(100% - 36px));margin:0 auto;padding:70px 0 90px}
+.legal-brand{display:inline-flex;margin-bottom:70px}
+.legal-wrap h1{font-family:'Space Grotesk';font-size:clamp(48px,8vw,86px);line-height:.98;letter-spacing:-.06em;margin:10px 0 22px}
+.legal-lead{font-size:18px;color:#c3c5ce;max-width:760px;margin-bottom:60px}
+.legal-wrap section{padding:28px 0;border-top:1px solid var(--line)}
+.legal-wrap h2{font-family:'Space Grotesk';font-size:25px;margin:0 0 10px}
+.legal-wrap p{color:#b4b7c2;font-size:14px;line-height:1.85}
+.legal-wrap a{color:#bfc0ff;text-decoration:underline;text-underline-offset:3px}
+.legal-note{margin-top:40px;padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025)}
+.legal-back{margin-top:50px}
+.error-page{min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 70% 20%,rgba(99,92,255,.14),transparent 32%),var(--bg)}
+.error-card{width:min(700px,100%);padding:55px;border-radius:32px}
+.error-card h1{font-family:'Space Grotesk';font-size:clamp(46px,7vw,78px);line-height:1;letter-spacing:-.06em;margin:12px 0}
+.error-card p{color:#b4b7c2;margin-bottom:28px}
+@media(max-width:560px){.legal-wrap{width:min(100% - 28px,860px);padding-top:40px}.legal-brand{margin-bottom:50px}.legal-wrap h1{font-size:48px}.legal-lead{font-size:16px}.error-card{padding:32px 24px}}
