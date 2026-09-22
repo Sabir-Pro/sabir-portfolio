@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/assets/sabir-photo.webp",
+      "destination": "/sabir-photo.webp"
+    },
+    {
+      "source": "/assets/CV_Sabir_IAZZA.pdf",
+      "destination": "/CV_Sabir_IAZZA.pdf"
+    },
+    {
+      "source": "/assets/projects/agenda-icp.html",
+      "destination": "/agenda-icp.html"
+    },
+    {
+      "source": "/assets/projects/grill-pasta.html",
+      "destination": "/grill-pasta.html"
+    }
+  ]
+}
