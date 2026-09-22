@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sabir-portfolio-chi.vercel.app/sitemap.xml
