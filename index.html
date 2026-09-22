@@ -4,7 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#050506">
-<meta name="description" content="Portfolio de Sabir IAZZA — Web, IT, réseaux, cybersécurité et projets techniques.">
+<meta name="description" content="Portfolio de Sabir IAZZA — développement web, IT, réseaux, cybersécurité, électronique et projets techniques.">
+<meta name="author" content="Sabir IAZZA">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#050506">
+<link rel="canonical" href="https://sabir-portfolio-chi.vercel.app/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="sabir-photo.webp" type="image/webp" fetchpriority="high">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Sabir IAZZA — Digital Portfolio">
+<meta property="og:description" content="Web · IT · Cyber · Réseaux · Électronique">
+<meta property="og:url" content="https://sabir-portfolio-chi.vercel.app/">
+<meta property="og:image" content="https://sabir-portfolio-chi.vercel.app/sabir-photo.webp">
+<meta property="og:image:alt" content="Portfolio de Sabir IAZZA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sabir IAZZA — Digital Portfolio">
+<meta name="twitter:description" content="Web · IT · Cyber · Réseaux · Électronique">
+<meta name="twitter:image" content="https://sabir-portfolio-chi.vercel.app/sabir-photo.webp">
 <title>Sabir IAZZA — Digital Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,21 +98,40 @@
   <div class="edu-grid"><div class="edu-main glass reveal"><span class="edu-year">2023 — 2026</span><h3>Bac Professionnel CIEL</h3><p>Cybersécurité, Informatique et Réseaux · Lycée professionnel Georges Cisson — Toulon</p></div><div class="cert-list reveal delay-1"><div><strong>PIX</strong><span>Certification des compétences numériques</span></div><div><strong>CISCO</strong><span>Introduction à la cybersécurité</span></div><div><strong>CISCO</strong><span>Introduction au développement web</span></div><div><strong>freeCodeCamp</strong><span>Responsive Web Design</span></div><div><strong>SoloLearn</strong><span>Développement web</span></div></div></div>
 </section>
 <section class="section-pad cv-section">
-  <div class="cv-card glass reveal"><div><span class="kicker">Curriculum vitae</span><h2>Tout mon parcours,<br><em>en un document.</em></h2><p>Consulte mon CV directement dans le portfolio ou télécharge-le pour le conserver.</p></div><button type="button" class="btn primary" id="openCV2">Ouvrir mon CV <span>↗</span></button></div>
+  <div class="cv-card glass reveal"><div><span class="kicker">Curriculum vitae</span><h2>Tout mon parcours,<br><em>en un document.</em></h2><p>Consulte mon CV directement dans le portfolio ou télécharge-le pour le conserver.</p></div><button type="button" class="btn ghost" id="openCV2">Ouvrir mon CV <span>↗</span></button></div>
 </section>
 <section class="section-pad ai-section" id="sabirgpt">
-  <div class="ai-card reveal"><div class="ai-glow"></div><span class="ai-badge">✦ SABIRGPT</span><h2>Pose-moi une question.</h2><p>Une interface IA dédiée à mon profil, mes projets, mon parcours et mes compétences.</p><button type="button" class="btn light" id="openAI2">Lancer SabirGPT <span>↗</span></button></div>
+  <div class="ai-card reveal"><div class="ai-glow"></div><span class="ai-badge">✦ SABIRGPT</span><h2>Pose-moi une question.</h2><p>Une interface IA dédiée à mon profil, mes projets, mon parcours et mes compétences.</p><button type="button" class="btn ghost light" id="openAI2">Lancer SabirGPT <span>↗</span></button></div>
 </section>
 <section class="section-pad contact" id="contact">
   <div class="section-head reveal"><span class="section-number">06</span><div><p class="kicker">Contact</p><h2>On construit quelque<br><em>chose ensemble ?</em></h2></div></div>
   <div class="contact-intro reveal"><span class="availability-dot"></span><span>Ouvert aux opportunités, projets web et collaborations</span></div><div class="contact-grid reveal"><a href="mailto:Sabirr.iazza@gmail.com" class="contact-card"><span>Email</span><strong>Sabirr.iazza@gmail.com</strong><i>↗</i></a><a href="https://github.com/Sabir-Pro" target="_blank" rel="noopener" class="contact-card"><span>GitHub</span><strong>Sabir-Pro</strong><i>↗</i></a><a href="https://www.linkedin.com/in/sabir-iazza-491819310" target="_blank" rel="noopener" class="contact-card"><span>LinkedIn</span><strong>Sabir IAZZA</strong><i>↗</i></a><a href="https://www.instagram.com/sabir.chl" target="_blank" rel="noopener" class="contact-card"><span>Instagram</span><strong>@sabir.chl</strong><i>↗</i></a></div>
 </section>
 </main>
-<footer><span>© 2026 Sabir IAZZA</span><span>Built with curiosity ✦</span></footer>
+<footer>
+  <span>© 2026 Sabir IAZZA</span>
+  <span class="footer-links"><a href="confidentialite.html">Confidentialité & RGPD</a><a href="cgu.html">CGU</a><button type="button" id="cookieSettings" class="footer-settings">Préférences statistiques</button></span>
+  <span>Built with curiosity ✦</span>
+</footer>
 
 <div class="overlay" id="cvModal" aria-hidden="true"><div class="modal cv-modal" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle"><div class="modal-bar"><strong id="cvModalTitle">Sabir IAZZA · CV</strong><div><a class="modal-action" href="CV_Sabir_IAZZA.pdf" download>Télécharger ↓</a><button type="button" class="close" data-close="cvModal" aria-label="Fermer le CV">×</button></div></div><iframe src="CV_Sabir_IAZZA.pdf" title="CV de Sabir IAZZA"></iframe></div></div>
 <div class="overlay" id="projectModal" aria-hidden="true"><div class="modal project-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-bar"><strong id="modalTitle">Projet</strong><button type="button" class="close" data-close="projectModal" aria-label="Fermer le projet">×</button></div><div class="modal-body" id="modalBody"></div></div></div>
-<div class="overlay" id="aiModal" aria-hidden="true"><div class="modal ai-modal" role="dialog" aria-modal="true" aria-labelledby="aiModalTitle"><div class="modal-bar"><strong id="aiModalTitle"><span class="ai-dot"></span> SabirGPT</strong><button type="button" class="close" data-close="aiModal" aria-label="Fermer SabirGPT">×</button></div><div class="chat"><div class="chat-messages" id="chatMessages"><div class="bubble bot">Salut 👋 Je suis <strong>SabirGPT</strong>.<br>Pose-moi une question sur Sabir, son parcours, ses projets ou ses compétences.</div></div><div class="suggestions"><button type="button" data-q="Qui est Sabir ?">Qui est Sabir ?</button><button type="button" data-q="Quels sont ses projets ?">Ses projets</button><button type="button" data-q="Quelles sont ses compétences ?">Ses compétences</button></div><form id="chatForm"><input id="chatInput" autocomplete="off" placeholder="Écris ta question…"><button type="submit" aria-label="Envoyer">↑</button></form><small class="chat-note">Prototype local · prêt à être connecté à une vraie API IA.</small></div></div></div>
-<script src="script.js"></script>
+<div class="overlay" id="aiModal" aria-hidden="true"><div class="modal ai-modal" role="dialog" aria-modal="true" aria-labelledby="aiModalTitle"><div class="modal-bar"><strong id="aiModalTitle"><span class="ai-dot"></span> SabirGPT</strong><button type="button" class="close" data-close="aiModal" aria-label="Fermer SabirGPT">×</button></div><div class="chat"><div class="chat-messages" id="chatMessages"><div class="bubble bot">Salut 👋 Je suis <strong>SabirGPT</strong>.<br>Pose-moi une question sur Sabir, son parcours, ses projets ou ses compétences.</div></div><div class="suggestions"><button type="button" data-q="Qui est Sabir ?">Qui est Sabir ?</button><button type="button" data-q="Quels sont ses projets ?">Ses projets</button><button type="button" data-q="Quelles sont ses compétences ?">Ses compétences</button></div><form id="chatForm" novalidate>
+  <input id="chatInput" name="message" autocomplete="off" maxlength="2000" required aria-label="Votre question" placeholder="Écris ta question…">
+  <input id="chatWebsite" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <button type="submit" aria-label="Envoyer">↑</button>
+</form>
+<small class="chat-note">Les requêtes IA passent par un endpoint serveur. Aucune clé API n'est exposée dans le navigateur.</small></div></div></div>
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+  <div>
+    <strong id="cookieTitle">Statistiques du site</strong>
+    <p id="cookieText">J'utilise Vercel Web Analytics pour mesurer la fréquentation. Les statistiques restent désactivées tant que vous n'avez pas choisi.</p>
+  </div>
+  <div class="cookie-actions">
+    <button type="button" class="btn ghost cookie-refuse" id="cookieRefuse">Continuer sans statistiques</button>
+    <button type="button" class="btn primary" id="cookieAccept">Activer les statistiques</button>
+  </div>
+</div>
+<script src="script.js" defer></script>
 </body>
 </html>
