@@ -13,3 +13,27 @@ body{background:radial-gradient(circle at 75% 8%,rgba(99,92,255,.10),transparent
 .project-link{transition:gap .3s var(--ease),color .3s}.project-link:hover{gap:16px}.timeline-item>div{transition:transform .35s var(--ease)}.timeline-item:hover>div{transform:translateX(5px)}.availability-dot{width:7px;height:7px;border-radius:50%;background:#72e5a3;box-shadow:0 0 14px rgba(114,229,163,.8);display:inline-block}.contact-intro{display:flex;align-items:center;gap:10px;margin:-22px 0 22px;color:#777983;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
 .mobile-menu{display:none;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid var(--line);font-size:16px}.mobile-panel{display:none;position:absolute;top:58px;left:0;right:0;padding:10px;border:1px solid var(--line);border-radius:24px;background:rgba(12,12,14,.96);backdrop-filter:blur(24px);box-shadow:0 25px 70px rgba(0,0,0,.45)}.mobile-panel.open{display:grid}.mobile-panel a,.mobile-panel button{padding:14px 12px;border-radius:15px;text-align:left;background:transparent;font-size:13px}.mobile-panel a:hover,.mobile-panel button:hover{background:rgba(255,255,255,.06)}.mobile-panel button{color:#bfc0ff}
 @media(max-width:900px){.mobile-menu{display:block;margin-left:auto;margin-right:8px}.nav-ai{order:3}.hero-location{display:none}}@media(max-width:560px){.hero-command{font-size:8px}.project-toolbar{font-size:8px}.skills-strip{gap:6px}.skills-strip span{font-size:8px;padding:7px 9px}}
+
+
+/* Accessibility, performance, privacy UI */
+html{scroll-padding-top:90px}
+section{content-visibility:auto;contain-intrinsic-size:1px 700px}
+.hero{content-visibility:visible}
+.hero-text,.about-copy p,.skill p,.project-card p,.timeline-item p,.edu-main p,.cv-card p,.ai-card p{color:#b4b7c2}
+.project-light p{color:#4d505a}
+.kicker,.eyebrow{color:#c0c2cb}
+.section-number{color:#8d909a}
+.cert-list span,.facts span{color:#a1a4ae}
+:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+.footer-links{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.footer-links a,.footer-settings{color:#9fa2ad;text-decoration:underline;text-underline-offset:3px;background:none;padding:0;font-size:10px}
+.footer-settings{cursor:pointer}
+.cookie-banner{position:fixed;z-index:120;left:18px;right:18px;bottom:18px;display:flex;justify-content:space-between;align-items:center;gap:22px;padding:18px 20px;border:1px solid rgba(255,255,255,.14);border-radius:22px;background:rgba(12,13,16,.96);backdrop-filter:blur(24px);box-shadow:0 30px 100px rgba(0,0,0,.55)}
+.cookie-banner[hidden]{display:none}
+.cookie-banner strong{font-size:13px}
+.cookie-banner p{margin:4px 0 0;color:#b1b4be;font-size:11px;max-width:680px}
+.cookie-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.cookie-actions .btn{font-size:10px;padding:11px 14px}
+.hp-field{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
+@media(max-width:720px){.cookie-banner{left:10px;right:10px;bottom:10px;align-items:flex-start;flex-direction:column}.cookie-actions{width:100%;justify-content:stretch}.cookie-actions .btn{flex:1}.footer-links{gap:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.marquee div{animation:none}.command-caret{animation:none}}
