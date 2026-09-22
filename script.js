@@ -250,3 +250,37 @@ if (window.matchMedia?.('(pointer:fine)').matches) {
     card.addEventListener('pointerleave', () => { card.style.transform = ''; });
   });
 }
+
+/* Interactive studio scenography */
+const studio = document.querySelector('.studio-scene');
+const studioViewport = document.querySelector('.studio-viewport');
+if (studio && studioViewport) {
+  let studioTicking = false;
+  const updateStudio = () => {
+    const rect = studio.getBoundingClientRect();
+    const range = Math.max(1, studio.offsetHeight - window.innerHeight);
+    const progress = Math.min(1, Math.max(0, -rect.top / range));
+    studio.style.setProperty('--studio-scroll', progress.toFixed(3));
+    studioTicking = false;
+  };
+  addEventListener('scroll', () => {
+    if (studioTicking) return;
+    studioTicking = true;
+    requestAnimationFrame(updateStudio);
+  }, { passive: true });
+  updateStudio();
+
+  if (window.matchMedia?.('(pointer:fine)').matches) {
+    studioViewport.addEventListener('pointermove', e => {
+      const rect = studioViewport.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width - .5) * 2;
+      const y = ((e.clientY - rect.top) / rect.height - .5) * 2;
+      studio.style.setProperty('--studio-x', (x * 16).toFixed(2));
+      studio.style.setProperty('--studio-y', (y * 12).toFixed(2));
+    }, { passive: true });
+    studioViewport.addEventListener('pointerleave', () => {
+      studio.style.setProperty('--studio-x', '0');
+      studio.style.setProperty('--studio-y', '0');
+    });
+  }
+}
