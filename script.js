@@ -101,25 +101,90 @@ function escapeHTML(value) {
   return value.replace(/[<>&"']/g, char => ({ '<':'&lt;', '>':'&gt;', '&':'&amp;', '"':'&quot;', "'":'&#39;' }[char]));
 }
 
-function send(question) {
-  if (!question.trim()) return;
+const API_ENDPOINT = '/api/chat';
+let chatHistory = [];
+
+function addBubble(role, text) {
   const box = $('#chatMessages');
-  box.insertAdjacentHTML('beforeend', `<div class="bubble user">${escapeHTML(question)}</div>`);
-  setTimeout(() => {
-    box.insertAdjacentHTML('beforeend', `<div class="bubble bot">${answer(question)}</div>`);
-    box.scrollTop = box.scrollHeight;
-  }, 180);
+  if (!box) return;
+  const bubble = document.createElement('div');
+  bubble.className = `bubble ${role === 'user' ? 'user' : 'bot'}`;
+  bubble.textContent = text;
+  box.appendChild(bubble);
   box.scrollTop = box.scrollHeight;
+}
+
+async function send(question) {
+  const clean = question.trim();
+  if (!clean || clean.length > 2000) return;
+  addBubble('user', clean);
+
+  try {
+    const response = await fetch(API_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: clean, history: chatHistory, website: $('#chatWebsite')?.value || '' })
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || 'AI indisponible');
+    const answerText = typeof data.answer === 'string' && data.answer.trim()
+      ? data.answer.trim()
+      : answer(clean);
+    chatHistory.push({ role: 'user', content: clean }, { role: 'assistant', content: answerText });
+    chatHistory = chatHistory.slice(-12);
+    addBubble('bot', answerText);
+  } catch {
+    const fallback = answer(clean);
+    chatHistory.push({ role: 'user', content: clean }, { role: 'assistant', content: fallback });
+    chatHistory = chatHistory.slice(-12);
+    addBubble('bot', fallback);
+  }
 }
 
 $('#chatForm')?.addEventListener('submit', e => {
   e.preventDefault();
   const input = $('#chatInput');
+  const honeypot = $('#chatWebsite');
+  if (!input?.checkValidity() || honeypot?.value) return;
   const question = input.value.trim();
   input.value = '';
   send(question);
 });
 $$('.suggestions button').forEach(button => button.addEventListener('click', () => send(button.dataset.q)));
+
+const CONSENT_KEY = 'sabir-analytics-consent-v1';
+
+function loadAnalytics() {
+  if (document.querySelector('script[data-sabir-analytics]')) return;
+  window.va = window.va || function (...args) { (window.vaq = window.vaq || []).push(args); };
+  const script = document.createElement('script');
+  script.src = '/_vercel/insights/script.js';
+  script.defer = true;
+  script.dataset.sabirAnalytics = 'true';
+  document.head.appendChild(script);
+}
+
+function setAnalyticsConsent(value) {
+  localStorage.setItem(CONSENT_KEY, value);
+  const banner = $('#cookieBanner');
+  if (banner) banner.hidden = true;
+  if (value === 'accepted') loadAnalytics();
+}
+
+function initConsent() {
+  const banner = $('#cookieBanner');
+  const saved = localStorage.getItem(CONSENT_KEY);
+  if (!banner) return;
+  banner.hidden = Boolean(saved);
+  $('#cookieAccept')?.addEventListener('click', () => setAnalyticsConsent('accepted'));
+  $('#cookieRefuse')?.addEventListener('click', () => setAnalyticsConsent('refused'));
+  $('#cookieSettings')?.addEventListener('click', () => {
+    banner.hidden = false;
+    banner.querySelector('#cookieAccept')?.focus({ preventScroll: true });
+  });
+  if (saved === 'accepted') loadAnalytics();
+}
+initConsent();
 
 const mobileMenu = $('#mobileMenu');
 const mobilePanel = $('#mobilePanel');
