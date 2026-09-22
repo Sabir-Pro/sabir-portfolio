@@ -286,6 +286,7 @@ if (studio && studioViewport) {
     studio.style.setProperty('--studio-beam-bx', (-p * 16).toFixed(1) + 'px');
     studio.style.setProperty('--studio-light', (.16 + p * .08).toFixed(3));
     studio.style.setProperty('--studio-light-scale', (.8 + p * .20).toFixed(3));
+    studio.style.setProperty('--studio-caption-opacity', (1 - p * .2).toFixed(3));
     if (!reduceMotion && (Math.abs(targetP-currentP)>.001 || Math.abs(targetX-currentX)>.05 || Math.abs(targetY-currentY)>.05)) studioFrame=requestAnimationFrame(renderStudio);
     else studioFrame=0;
   };
