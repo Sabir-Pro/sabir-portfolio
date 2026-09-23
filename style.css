@@ -88,3 +88,10 @@ section{content-visibility:auto;contain-intrinsic-size:1px 700px}
 @media(max-width:900px){.studio-stage{transform:translate3d(0,var(--studio-stage-y),0) scale(var(--studio-scale))}.studio-center{transform:translateX(-50%) translate3d(0,0,var(--studio-center-z)) scale(.95)}.studio-left{transform:translate3d(0,0,var(--studio-side-z)) rotateY(24deg) rotateZ(-2deg) scale(.9)}.studio-right{transform:translate3d(0,0,var(--studio-side-z)) rotateY(-24deg) rotateZ(2deg) scale(.9)}}
 @media(max-width:560px){.studio-stage{transform:translate3d(0,var(--studio-stage-y),0)}.studio-center{transform:translateX(-50%) translate3d(0,0,var(--studio-center-z)) scale(.8)}.studio-left{transform:translate3d(0,0,var(--studio-side-z)) rotateY(27deg) scale(.72)}.studio-right{transform:translate3d(0,0,var(--studio-side-z)) rotateY(-27deg) scale(.72)}}
 @media(prefers-reduced-motion:reduce){.studio-glow-a,.studio-glow-b,.studio-beam-a,.studio-beam-b,.studio-center-light,.studio-stage,.studio-left,.studio-center,.studio-right{transform:none!important}.studio-panel{transition:none}}
+
+
+/* Client project links */
+.project-neutral .project-link{display:inline-flex;align-items:center;gap:8px;width:max-content;max-width:100%;padding:11px 15px;border:1px solid rgba(255,255,255,.16);border-radius:999px;color:#e5e7ef;background:rgba(255,255,255,.045);text-decoration:none;line-height:1.35}
+.project-neutral .project-link:hover{border-color:rgba(139,140,255,.5);background:rgba(139,140,255,.10);color:#fff}
+.project-neutral .project-link span{margin-left:2px}
+@media(max-width:560px){.project-neutral .project-link{font-size:10px;padding:10px 12px}}
