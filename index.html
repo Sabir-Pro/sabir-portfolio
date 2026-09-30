@@ -23,7 +23,7 @@
 <meta name="twitter:description" content="Web, IT, cybersécurité, réseaux et électronique.">
 <meta name="twitter:image" content="https://sabir-portfolio-chi.vercel.app/sabir-photo.webp">
 <script>
-(function(){try{var s=localStorage.getItem('sabir-theme');var m=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',s||m);}catch(e){document.documentElement.setAttribute('data-theme',window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}})();
+(function(){try{var s=localStorage.getItem('sabir-theme');document.documentElement.setAttribute('data-theme',s||'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -388,6 +388,35 @@ footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1p
 .consent{position:fixed;z-index:190;right:20px;bottom:20px;width:min(460px,calc(100% - 40px));padding:18px;border:1px solid var(--line-2);border-radius:var(--r-lg);background:var(--glass-strong);box-shadow:var(--shadow);backdrop-filter:blur(18px)}
 .consent p{margin:0;color:var(--muted);font-size:.87rem;line-height:1.5}.consent p a{color:var(--text);text-decoration:underline;text-underline-offset:3px}.consent>div{display:flex;justify-content:flex-end;gap:10px;margin-top:14px}.consent .btn{min-height:40px;padding:9px 14px;font-size:.82rem}
 @media(max-width:520px){.consent{right:12px;bottom:12px;width:calc(100% - 24px)}.consent>div{justify-content:stretch}.consent .btn{flex:1}}
+
+/* ============ Cinematic project reel ============
+   The project archive deliberately reads as six editorial scenes, not a grid of
+   dashboard cards. SVG covers remain local, crisp and cheap to render. */
+#projects{overflow:clip}
+#projects .bento{display:flex;flex-direction:column;gap:clamp(28px,5vw,72px);margin-top:clamp(42px,7vw,84px)}
+#projects .proj,#projects .proj.wide{display:grid;grid-template-columns:minmax(0,.86fr) minmax(420px,1.14fr);grid-column:auto;min-height:min(720px,78vh);border-radius:clamp(24px,3vw,42px);isolation:isolate;background:linear-gradient(132deg,#0b101b,#06070b 62%,#11101f);box-shadow:0 32px 100px rgba(0,0,0,.28);transform:translateZ(0)}
+#projects .proj::before{content:"";position:absolute;z-index:-1;inset:-35%;background:radial-gradient(circle at 78% 42%,rgba(88,226,255,.15),transparent 27%),radial-gradient(circle at 22% 88%,rgba(143,104,255,.14),transparent 32%);transition:transform 1.2s var(--ease);transform:translate3d(0,0,0)}
+#projects .proj:hover::before{transform:translate3d(-3%,2%,0) scale(1.04)}
+#projects .proj:nth-child(even){grid-template-columns:minmax(420px,1.14fr) minmax(0,.86fr);background:linear-gradient(132deg,#110d16,#07080d 62%,#07151b)}
+#projects .proj:nth-child(even) .cover{order:-1}
+#projects .proj:nth-child(3){background:linear-gradient(132deg,#070e17,#05070b 62%,#151018)}
+#projects .proj:nth-child(4){background:linear-gradient(132deg,#0f0b18,#06070b 62%,#0b1b22)}
+#projects .proj:nth-child(5){background:linear-gradient(132deg,#081521,#06080e 62%,#1b1030)}
+#projects .proj:nth-child(6){background:linear-gradient(132deg,#10131a,#07080d 62%,#1b100c)}
+#projects .proj-body{position:relative;z-index:1;padding:clamp(34px,6vw,92px);justify-content:center;align-items:flex-start;gap:18px}
+#projects .proj h3{font-size:clamp(2.5rem,5.4vw,6.2rem);line-height:.88;letter-spacing:-.065em;max-width:8ch}
+#projects .proj p{font-size:clamp(.95rem,1.25vw,1.12rem);line-height:1.65;max-width:42ch}
+#projects .proj .cover,#projects .proj.wide .cover{height:auto;min-height:100%;overflow:hidden;background:#090b11}
+#projects .proj .cover::after{z-index:2;left:clamp(18px,3vw,34px);top:clamp(18px,3vw,34px);padding:8px 11px}
+#projects .proj .cover::before{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(115deg,rgba(0,0,0,.18),transparent 42%,rgba(255,255,255,.08));pointer-events:none}
+#projects .proj .cover svg{height:100%;min-height:100%;transform:scale(1.02);transition:transform 1.2s var(--ease),filter 1.2s var(--ease)}
+#projects .proj:hover .cover svg{transform:scale(1.09);filter:saturate(1.12) contrast(1.04)}
+#projects .proj .kind{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.68rem;letter-spacing:.1em}
+#projects .proj .proj-foot{margin-top:18px}
+#projects .proj .link{padding:12px 16px;border:1px solid var(--line-2);border-radius:999px;background:rgba(255,255,255,.04)}
+#projects .proj .link:hover{border-color:var(--cyan);background:rgba(79,227,255,.08)}
+@media(max-width:800px){#projects .proj,#projects .proj.wide,#projects .proj:nth-child(even){grid-template-columns:1fr;min-height:0}#projects .proj:nth-child(even) .cover{order:0}#projects .proj .cover,#projects .proj.wide .cover{height:clamp(260px,58vw,430px);min-height:0}#projects .proj-body{padding:30px 24px 34px}#projects .proj h3{font-size:clamp(2.35rem,12vw,4rem);max-width:11ch}}
+@media(prefers-reduced-motion:reduce){#projects .proj::before,#projects .proj .cover svg{transition:none!important}#projects .proj:hover .cover svg{transform:scale(1.02)}}
 .to-top{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:100;width:46px;height:46px;border-radius:50%;background:var(--text);color:var(--bg);display:grid;place-items:center;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(10px);transition:.35s var(--ease)}
 .to-top.show{opacity:1;visibility:visible;transform:none}
 .to-top svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
@@ -1028,14 +1057,17 @@ $('#theme-toggle').addEventListener('click', () => applyTheme(isDark() ? 'light'
 /* ===================== Loader ===================== */
 const loader = $('#loader'), loaderFill = $('#loader-fill');
 let loadProgress = 0, loadDone = false;
+let hasSeenIntro = false; try{ hasSeenIntro = sessionStorage.getItem('sabir-intro-seen') === '1'; }catch(e){}
+if(hasSeenIntro) loader.classList.add('instant');
 const loadTick = setInterval(() => { loadProgress = Math.min(88, loadProgress + 6 + Math.random() * 14); loaderFill.style.width = loadProgress + '%'; }, 110);
 function finishLoad(){
   if(loadDone) return; loadDone = true; clearInterval(loadTick);
   loaderFill.style.width = '100%';
-  setTimeout(() => { loader.classList.add('done'); document.body.classList.add('ready'); layoutRing(); onScroll(); }, 300);
+  try{ sessionStorage.setItem('sabir-intro-seen','1'); }catch(e){}
+  setTimeout(() => { loader.classList.add('done'); document.body.classList.add('ready'); layoutRing(); onScroll(); }, hasSeenIntro ? 0 : 160);
 }
-if(document.readyState === 'complete') setTimeout(finishLoad, 350); else window.addEventListener('load', () => setTimeout(finishLoad, 350));
-setTimeout(finishLoad, 3200);
+if(document.readyState === 'complete') setTimeout(finishLoad, hasSeenIntro ? 0 : 380); else window.addEventListener('load', () => setTimeout(finishLoad, hasSeenIntro ? 0 : 380));
+setTimeout(finishLoad, hasSeenIntro ? 120 : 950);
 
 /* ===================== Nav, scroll, progress ===================== */
 const nav = $('#nav'), progress = $('#progress'), toTop = $('#to-top');
