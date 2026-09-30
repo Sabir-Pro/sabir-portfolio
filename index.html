@@ -14,6 +14,7 @@
 <meta property="og:locale" content="fr_FR">
 <link rel="canonical" href="https://sabir-portfolio-chi.vercel.app/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="sabir-cinematic-lake.png" type="image/png" fetchpriority="high">
 <link rel="preload" as="image" href="sabir-photo.webp" type="image/webp" fetchpriority="high">
 <meta property="og:url" content="https://sabir-portfolio-chi.vercel.app/">
 <meta property="og:image" content="https://sabir-portfolio-chi.vercel.app/sabir-photo.webp">
@@ -222,6 +223,23 @@ body.ready .float-chip{animation:rise .9s var(--ease) forwards,float 6s ease-in-
 @media(max-width:900px){.hero-film .credit{top:calc(var(--nav-h) + 24px);right:22px}.hero-film .timecode{display:none}.hero::after{box-shadow:inset 0 0 20vw 1vw #030405}.hero-director{bottom:26px}.director-track{grid-template-columns:1fr repeat(3,1fr);min-height:52px}.director-label{padding-left:14px;font-size:.56rem}.director-choice{min-height:44px;padding:0 8px;font-size:.62rem}.director-caption{display:none}}
 @media(max-width:520px){.hero-director{width:calc(100% - 24px);bottom:18px}.director-track{border-radius:18px;grid-template-columns:repeat(3,1fr);padding:3px}.director-label{display:none}.director-choice{min-height:42px;font-size:.58rem;letter-spacing:.02em}}
 @media(prefers-reduced-motion:reduce){.hero-film::before,.hero-film::after,.hero-film .grain{animation:none}.hero-film .credit{opacity:1}}
+
+/* ============ Prompt film scene ============
+   An original full-viewport scene inspired by cinematic creative tools: the work
+   begins in one quiet frame, then the orange action opens the project reel. */
+body.film-layout .nav{top:calc(26px + env(safe-area-inset-top,0px));width:min(1110px,calc(100% - 48px));height:46px;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;color:#fff}
+body.film-layout .brand{font-family:'Manrope',system-ui,sans-serif;font-size:1.02rem;font-weight:700;letter-spacing:-.025em;text-shadow:0 1px 12px rgba(0,0,0,.48)}body.film-layout .brand i{width:28px;height:28px;border-radius:50%;background:radial-gradient(circle at 50% 50%,#17161c 0 13%,#fff 14% 37%,#9c86ce 38%);box-shadow:0 1px 12px rgba(0,0,0,.42)}
+body.film-layout .nav-links{gap:clamp(18px,3.1vw,46px)}body.film-layout .nav-links a{padding:5px 0;background:none!important;color:rgba(255,255,255,.9);font-size:.91rem;font-weight:500;text-shadow:0 1px 12px rgba(0,0,0,.48)}body.film-layout .nav-links a:hover,body.film-layout .nav-links a.active{color:#fff}
+body.film-layout .nav-actions{gap:10px}body.film-layout #theme-toggle{display:none}body.film-layout .nav .nav-cta{min-height:42px;padding:0 17px;border:1px solid rgba(255,255,255,.15);border-radius:12px;background:linear-gradient(180deg,rgba(69,69,74,.88),rgba(23,23,27,.92));color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.11),0 2px 16px rgba(0,0,0,.32);font-weight:600}body.film-layout .nav .nav-cta:hover{transform:translateY(-1px);filter:brightness(1.12)}
+.prompt-scene{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;isolation:isolate;background:#080b12;color:#fff;display:block;padding:0!important}.prompt-scene::before{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(180deg,rgba(2,5,10,.22) 0%,rgba(2,5,10,.04) 34%,rgba(2,5,10,.25) 68%,rgba(2,5,10,.77) 100%),linear-gradient(90deg,rgba(1,4,10,.25),transparent 32%,transparent 68%,rgba(1,4,10,.28));pointer-events:none}.prompt-scene::after{content:"";position:absolute;z-index:2;inset:0;pointer-events:none;background:radial-gradient(65% 50% at 50% 44%,transparent 40%,rgba(1,4,9,.22) 100%);box-shadow:inset 0 0 14vw rgba(0,0,0,.18)}
+.scene-backdrop{position:absolute;z-index:0;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.88) contrast(1.03) brightness(.8)}.scene-backdrop-glow{position:absolute;z-index:1;inset:-20%;pointer-events:none;background:radial-gradient(ellipse 37% 24% at 59% 48%,rgba(91,224,255,.13),transparent 72%);filter:blur(25px);animation:lakeGlow 12s ease-in-out infinite alternate}@keyframes lakeGlow{to{transform:translate3d(-3%,2%,0);opacity:.7}}
+.scene-frame{position:relative;z-index:3;min-height:100vh;min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:1fr auto;align-items:center;padding:calc(84px + env(safe-area-inset-top,0px)) clamp(24px,6vw,112px) calc(38px + env(safe-area-inset-bottom,0px))}.scene-center{justify-self:center;align-self:center;width:min(720px,100%);margin-top:24px;text-align:center}.scene-overline{margin-bottom:18px;color:rgba(255,255,255,.68);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.67rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.48)}.scene-title{margin:0;color:#fff;font-family:'Manrope',system-ui,sans-serif;font-size:clamp(2.25rem,3.3vw,3.45rem);font-weight:480;line-height:1.1;letter-spacing:-.036em;text-shadow:0 2px 24px rgba(0,0,0,.4)}
+.scene-composer{position:relative;width:100%;height:148px;margin:clamp(30px,5vh,52px) auto 0;border:1px solid rgba(222,234,255,.15);border-radius:26px;background:rgba(21,23,29,.9);box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 22px 60px rgba(0,0,0,.34);-webkit-backdrop-filter:blur(26px) saturate(112%);backdrop-filter:blur(26px) saturate(112%);text-align:left}.scene-prompt{position:absolute;top:30px;left:28px;right:28px;overflow:hidden;color:#a4a5a9;font-size:.83rem;font-weight:400;letter-spacing:.004em;line-height:1.4;white-space:nowrap;text-overflow:ellipsis}.scene-tools{position:absolute;left:19px;right:14px;bottom:19px;height:37px}.scene-chips{position:absolute;left:0;top:3px;display:flex;gap:6px}.scene-chip{display:inline-flex;align-items:center;height:30px;padding:0 12px;border:1px solid rgba(255,255,255,.06);border-radius:9px;background:linear-gradient(180deg,rgba(255,255,255,.105),rgba(255,255,255,.045));color:#b0b1b5;font-family:'Manrope',system-ui,sans-serif;font-size:.67rem;font-weight:600;line-height:1;white-space:nowrap}.scene-chip svg{width:14px;height:14px;margin-right:5px;fill:currentColor;opacity:.88}.scene-model{position:absolute;right:132px;top:13px;display:inline-flex;align-items:center;gap:6px;color:#a6a7aa;font-family:'Manrope',system-ui,sans-serif;font-size:.72rem;font-weight:500;line-height:1;white-space:nowrap}.scene-model svg{width:8px;height:8px;fill:none;stroke:currentColor;stroke-width:1.7}.scene-attach{position:absolute;right:74px;top:7px;width:22px;height:22px;display:grid;place-items:center;color:#bebfc2}.scene-attach svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.scene-send{position:absolute;right:0;top:0;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(163deg,#f9bd98,#f29c71 46%,#df8051);color:#fff;box-shadow:0 3px 13px rgba(210,110,60,.38);transition:filter .2s,transform .2s}.scene-send:hover{filter:brightness(1.08);transform:translateY(-1px)}.scene-send:active{transform:scale(.95)}.scene-send svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.25;stroke-linecap:round;stroke-linejoin:round}
+.scene-proof{align-self:end;justify-self:center;margin:0 0 12px;color:rgba(255,255,255,.91);font-family:'Manrope',system-ui,sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.02em;text-align:center;text-shadow:0 1px 12px rgba(0,0,0,.55)}.scene-credentials{display:flex;align-items:center;justify-content:center;gap:clamp(24px,5vw,66px);color:rgba(255,255,255,.82);font-family:'Syne',sans-serif;font-size:clamp(.75rem,1.2vw,1.02rem);font-weight:800;letter-spacing:.04em;text-shadow:0 1px 12px rgba(0,0,0,.55)}
+body.ready .prompt-scene .scene-overline,body.ready .prompt-scene .scene-title,body.ready .prompt-scene .scene-composer,body.ready .prompt-scene .scene-proof,body.ready .prompt-scene .scene-credentials{animation-fill-mode:both}body.ready .prompt-scene .scene-overline{animation:sceneDown .55s var(--ease) .08s}body.ready .prompt-scene .scene-title{animation:sceneFocus .92s cubic-bezier(.16,1,.3,1) .26s}body.ready .prompt-scene .scene-composer{animation:scenePanel .8s cubic-bezier(.16,1,.3,1) .55s}body.ready .prompt-scene .scene-proof{animation:sceneUp .52s var(--ease) .96s}body.ready .prompt-scene .scene-credentials{animation:sceneUp .55s var(--ease) 1.04s}@keyframes sceneDown{from{opacity:0;transform:translateY(-6px)}}@keyframes sceneFocus{from{opacity:0;filter:blur(7px);transform:translateY(15px)}}@keyframes scenePanel{from{opacity:0;transform:translateY(19px) scale(.987)}}@keyframes sceneUp{from{opacity:0;transform:translateY(7px)}}
+@media(max-width:980px){body.film-layout .nav{width:calc(100% - 40px)}body.film-layout .nav-links{gap:18px}body.film-layout .nav-links a{font-size:.78rem}.scene-frame{padding-inline:clamp(22px,5vw,56px)}.scene-center{width:min(680px,100%)}}
+@media(max-width:680px){body.film-layout .nav{top:calc(17px + env(safe-area-inset-top,0px));width:calc(100% - 32px);height:42px}body.film-layout .brand{font-size:.88rem}body.film-layout .brand i{width:28px;height:28px}body.film-layout .nav .nav-cta{display:none}body.film-layout .burger{display:grid!important;width:40px;height:40px;background:rgba(14,16,22,.46);border-color:rgba(255,255,255,.18);color:#fff}.scene-backdrop{object-position:52% center}.scene-frame{padding:calc(78px + env(safe-area-inset-top,0px)) 18px calc(24px + env(safe-area-inset-bottom,0px))}.scene-center{align-self:center;margin-top:16px}.scene-overline{margin-bottom:15px;font-size:.58rem}.scene-title{max-width:13ch;margin-inline:auto;font-size:clamp(2rem,9vw,2.72rem);line-height:1.12}.scene-composer{height:auto;min-height:177px;margin-top:29px;padding:17px 15px 15px;border-radius:19px}.scene-prompt{position:static;display:block;padding:0 2px;font-size:.75rem}.scene-tools{position:static;display:flex;flex-direction:column;gap:12px;height:auto;margin-top:25px}.scene-chips{position:static;display:flex;flex-wrap:wrap;gap:6px}.scene-chip{height:29px;padding:0 10px;font-size:.62rem}.scene-model{position:static;order:2;align-self:flex-start;font-size:.69rem}.scene-attach{position:absolute;right:70px;bottom:17px;top:auto}.scene-send{right:15px;bottom:13px;top:auto;width:40px;height:40px}.scene-proof{font-size:.7rem;margin-bottom:9px}.scene-credentials{gap:23px;font-size:.72rem}}
+@media(prefers-reduced-motion:reduce){.scene-backdrop-glow{animation:none}.prompt-scene *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 /* ============ Sections ============ */
 .section{position:relative;padding:clamp(84px,10vw,150px) 0}
@@ -506,7 +524,7 @@ footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1p
 }
 </style>
 </head>
-<body>
+<body class="film-layout">
 <noscript><style>.loader{display:none}.hero-copy > *,.stage-card,.float-chip,.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <div class="bg" aria-hidden="true"></div>
 
@@ -616,7 +634,7 @@ footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1p
       <svg class="ico-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       <svg class="ico-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
     </button>
-    <button class="btn btn-primary nav-cta" id="open-gpt-nav" type="button">SabirGPT <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></button>
+    <a class="btn btn-primary nav-cta" href="#projects">Voir le film <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
     <button class="icon-btn burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
       <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -637,50 +655,32 @@ footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1p
 <main id="top">
 
   <!-- ================= HERO ================= -->
-  <section class="hero" aria-label="Introduction" data-scene="web">
-    <div class="hero-film" aria-hidden="true">
-      <span class="grain"></span>
-      <span class="credit">Une expérience originale<b>SABIR IAZZA</b></span>
-      <span class="timecode">01:26 — LYON / FR</span>
-    </div>
-    <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <span class="badge"><i></i>Disponible pour de nouveaux projets</span>
-        <h1><span class="sweep">Je construis des expériences numériques.</span></h1>
-        <p class="lead">Web developer, profil IT et passionné par les réseaux, la cybersécurité et les systèmes techniques. Je transforme des idées en interfaces utiles, propres et interactives.</p>
-        <p class="hero-signature"><i></i>Web · IT · Cybersecurity / Lyon</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects" data-magnet>Entrer dans le film <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
-          <a class="btn btn-ghost" href="https://sabir-portfolio-chi.vercel.app/CV_Sabir_IAZZA.pdf" target="_blank" rel="noopener" data-magnet>Voir mon CV <svg viewBox="0 0 24 24"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg></a>
-        </div>
-        <div class="hero-meta">
-          <span class="meta-chip">Web, IT &amp; cybersécurité</span>
-          <span class="meta-chip">Lyon, France</span>
-          <span class="meta-chip">Portfolio 2026</span>
+  <section class="hero prompt-scene" aria-label="Bande-annonce interactive de Sabir IAZZA">
+    <img class="scene-backdrop" src="sabir-cinematic-lake.png" alt="" aria-hidden="true" fetchpriority="high">
+    <span class="scene-backdrop-glow" aria-hidden="true"></span>
+    <div class="scene-frame">
+      <div class="scene-center">
+        <p class="scene-overline">Sabir IAZZA — Digital Studio</p>
+        <h1 class="scene-title">Décris ton projet.<br>Je le rends réel.</h1>
+        <div class="scene-composer" aria-label="Console de création de projet">
+          <p class="scene-prompt">Un site, une application ou une interface qui mérite de devenir une expérience…</p>
+          <div class="scene-tools">
+            <div class="scene-chips" aria-label="Domaines du studio">
+              <span class="scene-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg>Site web</span>
+              <span class="scene-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v18H7zM10 18h4"/></svg>App mobile</span>
+              <span class="scene-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 5v8l-8 5-8-5V8zM8.5 10l3.5 2 3.5-2"/></svg>Expérience IA</span>
+            </div>
+            <span class="scene-model">Web / IT <svg viewBox="0 0 12 12" aria-hidden="true"><path d="m2 4 4 4 4-4"/></svg></span>
+            <span class="scene-attach" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m9 12 6.5-6.5a3.5 3.5 0 1 1 5 5L11 20a5 5 0 1 1-7-7l9-9"/></svg></span>
+            <a class="scene-send" href="#projects" aria-label="Lancer les chapitres de projets"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+          </div>
         </div>
       </div>
-      <div class="hero-stage" aria-hidden="true">
-        <span class="float-chip">HTML / CSS / JS</span>
-        <span class="float-chip">Cybersécurité</span>
-        <span class="float-chip">Raspberry Pi</span>
-        <div class="stage-card">
-          <div class="avatar">SI</div>
-          <div><b>Sabir IAZZA</b><small>Web developer, profil IT</small></div>
-          <span class="online"><i></i>en ligne</span>
-        </div>
+      <div>
+        <p class="scene-proof">Du concept au produit, avec soin.</p>
+        <div class="scene-credentials" aria-label="Domaines de Sabir"><span>WEB</span><span>SYSTÈMES</span><span>CRÉATION</span></div>
       </div>
     </div>
-    <div class="hero-director" role="group" aria-label="Choisir une atmosphère de présentation">
-      <div class="director-track">
-        <span class="director-label">Choisir la scène</span>
-        <button class="director-choice" type="button" data-hero-scene="web" aria-pressed="true">Web</button>
-        <button class="director-choice" type="button" data-hero-scene="systems" aria-pressed="false">Systèmes</button>
-        <button class="director-choice" type="button" data-hero-scene="future" aria-pressed="false">Futur</button>
-      </div>
-      <p class="director-caption"><span>Expérience interactive</span><b id="scene-caption">Interfaces qui prennent vie</b><span>01 — 03</span></p>
-    </div>
-    <a class="scroll-cue" href="#about" aria-label="Découvrir la suite">Défiler<span></span></a>
   </section>
 
   <!-- ================= ABOUT ================= -->
@@ -1142,6 +1142,7 @@ const nav = $('#nav'), progress = $('#progress'), toTop = $('#to-top');
 const heroCanvas = $('#hero-canvas'), heroStage = $('.hero-stage');
 let lastY = window.scrollY, ticking = false, menuOpen = false;
 function updateHero(y){
+  if(!heroCanvas) return;
   const f = clamp(y / (window.innerHeight * .95), 0, 1);
   heroCanvas.style.opacity = (.82 * (1 - f)).toFixed(3);
   heroCanvas.style.transform = 'translateY(' + (y * .3).toFixed(1) + 'px)';
@@ -1494,6 +1495,7 @@ initConsent();
 
 /* ===================== Hero: Three.js scene ===================== */
 function initHero(){
+  if(document.querySelector('.prompt-scene')) return;
   const canvas = heroCanvas;
   if(!canvas || typeof THREE === 'undefined') return;
   let renderer;
