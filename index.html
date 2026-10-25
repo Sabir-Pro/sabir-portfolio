@@ -432,7 +432,7 @@ footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1p
 @media(max-width:520px){.consent{right:12px;bottom:12px;width:calc(100% - 24px)}.consent>div{justify-content:stretch}.consent .btn{flex:1}}
 
 /* ============ Cinematic project reel ============
-   The project archive deliberately reads as six editorial scenes, not a grid of
+   The project archive deliberately reads as seven editorial scenes, not a grid of
    dashboard cards. SVG covers remain local, crisp and cheap to render. */
 #projects{overflow:clip;background:#05060a;color:#f7f9ff;isolation:isolate}
 #projects::before{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(70% 45% at 86% 0%,rgba(71,222,255,.15),transparent 70%),radial-gradient(50% 40% at 5% 52%,rgba(132,87,255,.13),transparent 72%)}
@@ -449,6 +449,7 @@ footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1p
 #projects .proj:nth-child(4){background:linear-gradient(132deg,#0f0b18,#06070b 62%,#0b1b22)}
 #projects .proj:nth-child(5){background:linear-gradient(132deg,#081521,#06080e 62%,#1b1030)}
 #projects .proj:nth-child(6){background:linear-gradient(132deg,#10131a,#07080d 62%,#1b100c)}
+#projects .proj:nth-child(7){background:linear-gradient(132deg,#15110e,#07090c 62%,#17202a)}
 #projects .proj-body{position:relative;z-index:1;padding:clamp(34px,6vw,92px);justify-content:center;align-items:flex-start;gap:18px}
 #projects .proj h3{font-size:clamp(2.5rem,5.4vw,6.2rem);line-height:.88;letter-spacing:-.065em;max-width:8ch}
 #projects .proj p{font-size:clamp(.95rem,1.25vw,1.12rem);line-height:1.65;max-width:42ch}
@@ -536,6 +537,7 @@ footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1p
     <linearGradient id="g-mp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#33384A"/><stop offset="1" stop-color="#0E1016"/></linearGradient>
     <linearGradient id="g-ka" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7A5CFF"/><stop offset="1" stop-color="#1B0F4A"/></linearGradient>
     <linearGradient id="g-jv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E6BB2"/><stop offset="1" stop-color="#0E2240"/></linearGradient>
+    <linearGradient id="g-lf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B88756"/><stop offset=".5" stop-color="#2C3542"/><stop offset="1" stop-color="#0A1018"/></linearGradient>
     <pattern id="p-cells" width="38" height="30" patternUnits="userSpaceOnUse"><rect width="26" height="22" rx="6" fill="#1C2749"/></pattern>
     <pattern id="p-scope" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#1E6A66" stroke-width="1"/></pattern>
 
@@ -605,6 +607,18 @@ footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1p
       <text x="34" y="86" class="art-text" font-size="36" fill="#fff">JVA</text>
       <text x="34" y="122" class="art-text" font-size="26" fill="#fff" opacity=".85">Compagne</text>
       <text x="36" y="148" font-size="11.5" fill="#fff" opacity=".8" font-family="Manrope, sans-serif" font-weight="600">WordPress · maintenance · SEO</text>
+    </symbol>
+
+    <symbol id="c-lf" viewBox="0 0 400 220">
+      <rect width="400" height="220" fill="url(#g-lf)"/>
+      <rect x="226" y="46" width="132" height="126" rx="8" fill="#E9E0D4" opacity=".96"/>
+      <path d="M226 82h132M270 46v126M314 46v126" stroke="#9E8265" stroke-width="2" opacity=".72"/>
+      <path d="M206 174h174" stroke="#D8C2A7" stroke-width="3" stroke-linecap="round"/>
+      <path d="M245 172v-42h92v42" fill="#263341" stroke="#C8A97E" stroke-width="2"/>
+      <circle cx="337" cy="56" r="20" fill="#C99B68" opacity=".28"/>
+      <text x="34" y="92" class="art-text" font-size="34" fill="#fff">LF</text>
+      <text x="34" y="128" class="art-text" font-size="30" fill="#fff" opacity=".92">CONSULT</text>
+      <text x="36" y="154" font-size="11.5" fill="#fff" opacity=".78" font-family="Manrope, sans-serif" font-weight="600">Rénovation · Rhône-Alpes</text>
     </symbol>
   </defs>
 </svg>
@@ -827,6 +841,18 @@ footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1p
           </div>
           <span class="glare"></span>
         </article>
+
+        <article class="proj wide reveal" data-tilt="4" style="--d:.12s">
+          <div class="cover"><svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#c-lf"/></svg></div>
+          <div class="proj-body">
+            <span class="kind">Client · Projet Jessica</span>
+            <h3>LF Consult</h3>
+            <p>Création et mise en ligne du site vitrine de LF Consult, entreprise spécialisée dans la rénovation de bâtiments en Rhône-Alpes, avec une présentation claire des services, réalisations et prises de contact.</p>
+            <div class="tags"><span class="tag">Web</span><span class="tag">WordPress</span><span class="tag">Responsive</span><span class="tag">SEO</span><span class="tag">UX</span></div>
+            <div class="proj-foot"><a class="link" href="https://lf-consult.fr/" target="_blank" rel="noopener noreferrer">Voir lf-consult.fr <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></a></div>
+          </div>
+          <span class="glare"></span>
+        </article>
       </div>
     </div>
   </section>
@@ -868,13 +894,17 @@ footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1p
             <div class="cover"><svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#c-jv"/></svg></div>
             <div class="rc-body"><span class="kind">Client</span><h3>JVA Compagne</h3><small>WordPress et web</small></div>
           </div>
+          <div class="ring-card" data-title="LF Consult" data-sub="Site vitrine, rénovation et expérience client">
+            <div class="cover"><svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#c-lf"/></svg></div>
+            <div class="rc-body"><span class="kind">Client</span><h3>LF Consult</h3><small>Site vitrine · Rhône-Alpes</small></div>
+          </div>
         </div>
       </div>
       <div class="studio-caption">
-        <span class="studio-counter" id="studio-counter">01 / 06</span>
+        <span class="studio-counter" id="studio-counter">01 / 07</span>
         <b id="studio-title">Grill Pasta</b>
         <span id="studio-sub">Site vitrine, HTML, CSS et JavaScript</span>
-        <div class="ring-dots" id="ring-dots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="ring-dots" id="ring-dots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
         <div class="studio-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>Défiler pour tourner <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l-7 7 7 7M19 12l-7-7"/></svg>Glisser pour explorer</div>
         <a class="studio-cta" href="#projects">Voir tous les projets <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
@@ -1394,7 +1424,7 @@ const chat = $('#chat'), chatForm = $('#chat-form'), chatInput = $('#chat-input'
 const CV_URL = 'https://sabir-portfolio-chi.vercel.app/CV_Sabir_IAZZA.pdf';
 const KB = [
   { keys: ['qui', 'sabir', 'presente', 'profil', 'tu es', 'c est qui', 'toi'], text: 'Sabir IAZZA est web developer avec un profil IT, basé à Lyon. Passionné par les réseaux, la cybersécurité et les systèmes techniques, il transforme des idées en interfaces utiles, propres et interactives.' },
-  { keys: ['projet', 'realis', 'travaux', 'site', 'app', 'grill', 'agenda', 'macropad', 'diagnostic', 'kadri', 'jva'], text: 'Ses projets : Grill Pasta (site vitrine one-page), Agenda ICP (application web mobile), un projet de diagnostic électronique automobile (Bac Pro CIEL), un macropad Raspberry Pi Pico, une collaboration avec KADRI AI et une intervention WordPress pour JVA Compagne.' },
+  { keys: ['projet', 'realis', 'travaux', 'site', 'app', 'grill', 'agenda', 'macropad', 'diagnostic', 'kadri', 'jva', 'lf', 'consult', 'lf consult'], text: 'Ses projets : Grill Pasta (site vitrine one-page), Agenda ICP (application web mobile), un projet de diagnostic électronique automobile (Bac Pro CIEL), un macropad Raspberry Pi Pico, une collaboration avec KADRI AI, une intervention WordPress pour JVA Compagne et la création du site vitrine LF Consult.' },
   { keys: ['competence', 'skill', 'sait faire', 'techno', 'langage', 'stack', 'html', 'css', 'javascript', 'reseau', 'cyber', 'electronique'], text: 'Développement web (HTML, CSS, JavaScript, responsive), réseaux et cybersécurité, électronique et systèmes (OBD-II, CAN, Raspberry Pi, CircuitPython) et UI/UX design.' },
   { keys: ['parcours', 'experience', 'carriere', 'fibre', 'telephonie', 'electricite', 'histoire', 'chemin'], text: '2022 : fibre optique. 2023 : électricité et climatisation. 2024 : téléphonie et réparation. 2025 : développement web et assistance utilisateurs. 2026 : web, IT et projets personnels.' },
   { keys: ['formation', 'diplome', 'bac', 'ecole', 'lycee', 'certif', 'etude', 'cisco', 'pix', 'freecodecamp', 'sololearn'], text: 'Bac Professionnel CIEL (Cybersécurité, Informatique et Réseaux), Lycée Georges Cisson à Toulon, 2023–2026. Certifications : PIX, Cisco (introduction à la cybersécurité et au développement web), freeCodeCamp Responsive Web Design et SoloLearn développement web.' },
