@@ -544,6 +544,25 @@ footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1p
   .hero-copy > *,.stage-card,.float-chip{opacity:1;transform:none}
   .sweep{background:none;color:var(--text)}.hero .sweep{color:#f8faff}
 }
+
+/* Stats quality pass: contrast, responsive sizing and consistent 3D hover */
+.stat-card:last-child .stat-value{font-size:clamp(1.5rem,2.5vw,2.25rem);white-space:nowrap}
+:root[data-theme="light"] .stat-meta{color:#126344}
+:root[data-theme="light"] .stat-card:hover{border-color:rgba(14,158,189,.36);box-shadow:0 28px 70px -36px rgba(14,158,189,.34)}
+@media(hover:hover) and (pointer:fine){
+  .reveal.in.stat-card[data-tilt]:hover{transform:perspective(900px) translateY(-5px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0)}
+}
+@media(max-width:520px){
+  .stat-card:last-child .stat-value{font-size:clamp(.94rem,4.3vw,1.3rem);letter-spacing:-.065em}
+  .stat-card{min-width:0}
+  .stat-label{overflow-wrap:anywhere}
+  .stat-meta{line-height:1.45}
+}
+@media(prefers-reduced-motion:reduce){
+  .cursor{display:none!important}
+  .stat-card:hover,.reveal.in.stat-card[data-tilt]:hover{transform:none!important}
+}
+
 </style>
 </head>
 <body class="film-layout">
@@ -1739,6 +1758,15 @@ function initHero(){
   if(reduceMotion) render(0); else start();
 }
 try{ initHero(); }catch(e){ /* the page works without WebGL */ }
+
+/* Keep headline counters tied to the actual project cards. No invented growth %. */
+const projectTotal = $('#projects .proj').length;
+const clientTotal = $('#projects .proj .kind').filter(el => /client|collaboration/i.test(el.textContent || '')).length;
+const portfolioStatValues = $('.portfolio-stats .stat-value');
+if(portfolioStatValues.length >= 2){
+  portfolioStatValues[0].textContent = String(projectTotal).padStart(2, '0');
+  portfolioStatValues[1].textContent = String(clientTotal).padStart(2, '0');
+}
 
 /* ===================== Init ===================== */
 layoutRing(); onScroll();
