@@ -563,6 +563,57 @@ footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1p
   .stat-card:hover,.reveal.in.stat-card[data-tilt]:hover{transform:none!important}
 }
 
+
+/* SI signature — original motion identity, visually distinct from KADRI AI.
+   The existing hero and semantic heading remain in place. */
+.loader-monogram{position:relative;font:800 clamp(4.6rem,12vw,6.7rem)/.95 'Syne',sans-serif;letter-spacing:-.15em;background:linear-gradient(140deg,#f7fbff 15%,#79dfff 55%,#ae8fff 90%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 5px 28px rgba(110,174,248,.2))}
+.loader-monogram span{font-size:.33em;vertical-align:top;margin-left:.14em;letter-spacing:0;color:#78ddff;-webkit-text-fill-color:#78ddff}
+.loader-monogram:after{content:"";position:absolute;left:6%;bottom:-10%;width:88%;height:1px;background:linear-gradient(90deg,transparent,#78ddff,transparent)}
+.brand-si{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;width:31px;height:31px;border-radius:10px;border:1px solid rgba(172,201,255,.28);background:linear-gradient(140deg,rgba(121,224,255,.18),rgba(147,120,232,.13));color:#fff;font:800 1.32rem/.9 'Syne',sans-serif;letter-spacing:-.14em;text-shadow:0 0 14px rgba(113,214,255,.48)}
+.brand-si span{position:absolute;right:4px;top:4px;color:#9fe9ff;font:700 .52rem/1 'Manrope',sans-serif;letter-spacing:0}
+body.film-layout .brand .brand-si{flex:none}
+.scene-center{display:flex;flex-direction:column;align-items:center;justify-content:center;width:min(820px,100%);margin-top:4px}
+.scene-overline{position:relative;z-index:2}
+.si-emblem{--si-x:0px;--si-y:0px;--si-tilt-x:0deg;--si-tilt-y:0deg;position:relative;z-index:1;width:min(35vw,39svh,370px);min-width:205px;aspect-ratio:360/400;margin:-16px auto -10px;pointer-events:none;opacity:0;transform:perspective(1100px) translateY(30px) scale(.78) rotate(-5deg);transform-origin:50% 55%;will-change:transform,opacity}
+.si-emblem:before{content:"";position:absolute;z-index:-1;inset:13% 2%;border-radius:50%;background:radial-gradient(ellipse,rgba(89,164,250,.14),rgba(153,105,245,.06) 42%,transparent 72%);filter:blur(18px)}
+.si-emblem-plane{position:absolute;inset:0;transform:translate3d(var(--si-x),var(--si-y),0) rotateX(var(--si-tilt-x)) rotateY(var(--si-tilt-y));transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.si-emblem-art{position:absolute;inset:0;width:100%;height:100%;overflow:visible;transform:translateZ(30px);filter:drop-shadow(0 24px 25px rgba(0,0,0,.55)) drop-shadow(0 0 18px rgba(90,155,255,.26))}
+.si-emblem-art path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.si-emblem-shadow{stroke:rgba(1,3,15,.8);stroke-width:68;transform:translate(8px,9px)}
+.si-emblem-outline{stroke:url(#si-edge);stroke-width:60;opacity:.45}
+.si-emblem-main{stroke:url(#si-gradient);stroke-width:49;stroke-dasharray:1000;stroke-dashoffset:1000}
+.si-emblem-highlight{stroke:rgba(255,255,255,.52);stroke-width:2.2;stroke-dasharray:18 39;opacity:.85}
+.si-emblem-orbit{position:absolute;inset:6%;border-radius:50%;border:1px solid rgba(173,217,255,.17);transform:rotate(-28deg) scaleX(.85) rotateX(58deg);box-shadow:0 0 34px rgba(97,191,255,.13);opacity:.6}
+.si-emblem-i{position:absolute;top:11%;right:3%;font:800 clamp(1.7rem,3.8vw,3.6rem)/1 'Syne',sans-serif;color:#c5eeff;letter-spacing:-.09em;text-shadow:0 0 22px rgba(84,225,255,.55);transform:translateZ(45px)}
+.si-emblem-i:after{content:"";display:block;width:65%;height:2px;margin:7px auto 0;background:#a4dbff;box-shadow:0 0 9px #8de7ff}
+.si-emblem-glint{position:absolute;top:27%;right:7%;height:1px;width:40%;background:linear-gradient(90deg,transparent,rgba(219,243,255,.8),transparent);transform:rotate(-26deg);opacity:.6;box-shadow:0 0 12px rgba(154,225,255,.6)}
+body.ready .si-emblem{animation:siArrival 1.3s cubic-bezier(.16,1,.3,1) .05s both}
+body.ready .si-emblem-main{animation:siInkDraw 1.7s cubic-bezier(.24,.7,.15,1) .18s forwards}
+body.ready .si-emblem-glint{animation:siGlint 2.5s ease-in-out .45s 1 both}
+body.ready .prompt-scene .scene-title{animation:sceneFocus 1s cubic-bezier(.16,1,.3,1) .65s both}
+body.ready .prompt-scene .scene-proof{animation:sceneUp .65s var(--ease) .95s both}
+body.ready .prompt-scene .scene-credentials{animation:sceneUp .65s var(--ease) 1.03s both}
+@keyframes siArrival{0%{opacity:0;filter:blur(14px);transform:perspective(1100px) translateY(36px) scale(.74) rotate(-9deg)}65%{opacity:1;filter:blur(0);transform:perspective(1100px) translateY(-5px) scale(1.025) rotate(1deg)}100%{opacity:1;filter:blur(0);transform:perspective(1100px) translateY(0) scale(1) rotate(0)}}
+@keyframes siInkDraw{to{stroke-dashoffset:0}}
+@keyframes siGlint{0%,100%{opacity:0;transform:translateX(-30%) rotate(-26deg)}60%{opacity:.92;transform:translateX(25%) rotate(-26deg)}}
+@media(max-width:680px){
+  .scene-center{margin-top:0}
+  .si-emblem{width:min(72vw,33svh,280px);min-width:0;margin:-6px auto -1px}
+  .si-emblem-i{font-size:clamp(1.4rem,7vw,2.5rem)}
+  .scene-title{max-width:17ch;margin-inline:auto;font-size:clamp(1.8rem,7.5vw,2.55rem)}
+  .scene-overline{margin-bottom:6px}
+}
+@media(max-height:600px){
+  .si-emblem{width:min(31svh,240px);min-width:0;margin:-9px auto -5px}
+  .scene-title{font-size:clamp(1.5rem,5vh,2.35rem)}
+}
+@media(prefers-reduced-motion:reduce){
+  .si-emblem,body.ready .si-emblem{opacity:1;filter:none;transform:none;animation:none!important;will-change:auto}
+  .si-emblem-main,body.ready .si-emblem-main{stroke-dashoffset:0;animation:none!important}
+  .si-emblem-glint,body.ready .si-emblem-glint{animation:none!important;opacity:.45}
+  .si-emblem-plane{transform:none!important;transition:none!important}
+}
+
 </style>
 </head>
 <body class="film-layout">
@@ -666,6 +717,7 @@ footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1p
 
 <div class="loader" id="loader" aria-hidden="true">
   <div class="loader-inner">
+    <div class="loader-monogram" aria-hidden="true">S<span>I</span></div>
     <div class="loader-name">SABIR IAZZA</div>
     <div class="loader-bar"><i id="loader-fill"></i></div>
     <div class="loader-hint">Initialisation de la scène 3D</div>
@@ -674,7 +726,7 @@ footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1p
 <div class="progress" id="progress" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
-  <a class="brand" href="#top" aria-label="Retour en haut"><i></i>SABIR</a>
+  <a class="brand" href="#top" aria-label="Retour en haut"><span class="brand-si" aria-hidden="true">S<span>I</span></span>SABIR</a>
   <ul class="nav-links" id="nav-links">
     <li><a href="#about">À propos</a></li>
     <li><a href="#skills">Compétences</a></li>
@@ -715,6 +767,31 @@ footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1p
     <div class="scene-frame">
       <div class="scene-center">
         <p class="scene-overline">Sabir IAZZA — Digital Studio</p>
+        <div class="si-emblem" aria-hidden="true">
+          <div class="si-emblem-plane">
+            <span class="si-emblem-orbit"></span>
+            <svg class="si-emblem-art" viewBox="0 0 360 400" xmlns="http://www.w3.org/2000/svg" focusable="false">
+              <defs>
+                <linearGradient id="si-gradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#f2f7ff"/>
+                  <stop offset=".34" stop-color="#90b9d9"/>
+                  <stop offset=".67" stop-color="#a997e9"/>
+                  <stop offset="1" stop-color="#49e1fc"/>
+                </linearGradient>
+                <linearGradient id="si-edge" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#62e6ff"/>
+                  <stop offset="1" stop-color="#bc8bff"/>
+                </linearGradient>
+              </defs>
+              <path class="si-emblem-shadow" d="M279 91C248 52 141 36 103 96C63 159 145 184 206 202C280 223 301 263 270 314C229 380 122 350 89 306"/>
+              <path class="si-emblem-outline" d="M279 91C248 52 141 36 103 96C63 159 145 184 206 202C280 223 301 263 270 314C229 380 122 350 89 306"/>
+              <path class="si-emblem-main" d="M279 91C248 52 141 36 103 96C63 159 145 184 206 202C280 223 301 263 270 314C229 380 122 350 89 306"/>
+              <path class="si-emblem-highlight" d="M279 91C248 52 141 36 103 96C63 159 145 184 206 202C280 223 301 263 270 314C229 380 122 350 89 306"/>
+            </svg>
+            <span class="si-emblem-i">I</span>
+            <span class="si-emblem-glint"></span>
+          </div>
+        </div>
         <h1 class="scene-title">Décris ton projet.<br>Je le rends réel.</h1>
       </div>
       <div>
@@ -1200,6 +1277,27 @@ function finishLoad(){
 }
 if(document.readyState === 'complete') setTimeout(finishLoad, hasSeenIntro ? 0 : 380); else window.addEventListener('load', () => setTimeout(finishLoad, hasSeenIntro ? 0 : 380));
 setTimeout(finishLoad, hasSeenIntro ? 120 : 950);
+
+/* Subtle pointer parallax for the custom SI mark; no animation loop or extra library. */
+const signatureMark = document.querySelector('.si-emblem');
+const signatureScene = document.querySelector('.prompt-scene');
+if(signatureMark && signatureScene && finePointer && !reduceMotion){
+  signatureScene.addEventListener('pointermove', e => {
+    const r = signatureScene.getBoundingClientRect();
+    const x = clamp((e.clientX - r.left) / r.width * 2 - 1, -1, 1);
+    const y = clamp((e.clientY - r.top) / r.height * 2 - 1, -1, 1);
+    signatureMark.style.setProperty('--si-x', (x * 7).toFixed(1) + 'px');
+    signatureMark.style.setProperty('--si-y', (y * 5).toFixed(1) + 'px');
+    signatureMark.style.setProperty('--si-tilt-y', (x * 7).toFixed(1) + 'deg');
+    signatureMark.style.setProperty('--si-tilt-x', (-y * 5).toFixed(1) + 'deg');
+  }, {passive:true});
+  signatureScene.addEventListener('pointerleave', () => {
+    signatureMark.style.setProperty('--si-x', '0px');
+    signatureMark.style.setProperty('--si-y', '0px');
+    signatureMark.style.setProperty('--si-tilt-x', '0deg');
+    signatureMark.style.setProperty('--si-tilt-y', '0deg');
+  });
+}
 
 /* ===================== Hero director ===================== */
 const hero = $('.hero'), sceneCaption = $('#scene-caption');
