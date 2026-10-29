@@ -563,117 +563,10 @@ footer{padding:36px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1p
   .stat-card:hover,.reveal.in.stat-card[data-tilt]:hover{transform:none!important}
 }
 
-
-
-/* SI / Digital Form — a monumental, original typographic signature */
-.loader-monogram{position:relative;font:800 clamp(4.6rem,12vw,6.7rem)/.95 'Syne',sans-serif;letter-spacing:-.15em;background:linear-gradient(140deg,#f7fbff 15%,#79dfff 55%,#ae8fff 90%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 5px 28px rgba(110,174,248,.2))}
-.loader-monogram span{font-size:.33em;vertical-align:top;margin-left:.14em;letter-spacing:0;color:#78ddff;-webkit-text-fill-color:#78ddff}
-.loader-monogram:after{content:"";position:absolute;left:6%;bottom:-10%;width:88%;height:1px;background:linear-gradient(90deg,transparent,#78ddff,transparent)}
-.brand-si{position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;width:31px;height:31px;border-radius:10px;border:1px solid rgba(172,201,255,.28);background:linear-gradient(140deg,rgba(121,224,255,.18),rgba(147,120,232,.13));color:#fff;font:800 1.32rem/.9 'Syne',sans-serif;letter-spacing:-.14em;text-shadow:0 0 14px rgba(113,214,255,.48)}
-.brand-si span{position:absolute;right:4px;top:4px;color:#9fe9ff;font:700 .52rem/1 'Manrope',sans-serif;letter-spacing:0}
-body.film-layout .brand .brand-si{flex:none}
-body.film-layout .si-cinematic{position:relative;min-height:100vh;min-height:100svh;padding:0!important;background:#030711;overflow:hidden;isolation:isolate}
-.si-cinematic .scene-backdrop{object-position:50% 50%;opacity:.46;filter:brightness(.68) saturate(.75) contrast(1.12);transform:scale(1.08)}
-.si-cinematic::before{z-index:1;background:linear-gradient(90deg,rgba(2,6,14,.15) 0%,rgba(2,6,14,.52) 56%,rgba(2,6,14,.7) 100%),linear-gradient(180deg,rgba(2,5,12,.18) 0%,transparent 38%,rgba(2,5,12,.88) 100%)}
-.si-cinematic::after{z-index:2;background:radial-gradient(ellipse 42% 54% at 34% 45%,rgba(80,118,182,.07),transparent 78%);box-shadow:inset 0 0 20vw rgba(1,4,12,.3)}
-.si-cinematic .scene-backdrop-glow{opacity:.65;background:radial-gradient(ellipse 28% 40% at 34% 44%,rgba(65,148,244,.16),transparent 72%);filter:blur(34px)}
-.si-film-grain{position:absolute;inset:0;z-index:2;opacity:.09;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.58'/%3E%3C/svg%3E")}
-.si-cinematic .scene-frame.si-frame{z-index:3;width:min(1550px,100%);margin-inline:auto;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;padding:calc(92px + env(safe-area-inset-top,0px)) clamp(24px,5.1vw,90px) calc(30px + env(safe-area-inset-bottom,0px))}
-.si-hero-main{flex:1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:clamp(20px,3vw,70px);width:100%}
-.si-hero-art{position:relative;min-width:0;min-height:min(72svh,710px);display:grid;align-items:center;justify-items:center;perspective:1300px}
-.si-mark-shell{position:relative;width:min(44vw,66svh,620px);aspect-ratio:540/640;max-width:100%;isolation:isolate;opacity:0;transform:translateY(50px) scale(.81) rotate(-6deg)}
-.si-mark-halo{position:absolute;inset:15% 2%;border-radius:50%;background:radial-gradient(ellipse at 50% 47%,rgba(78,142,226,.18),rgba(130,98,198,.09) 42%,transparent 72%);filter:blur(20px)}
-.si-mark-orbit{position:absolute;inset:8% -6%;border:1px solid rgba(156,203,255,.17);border-radius:50%;transform:rotate(-25deg) rotateX(66deg);box-shadow:0 0 30px rgba(72,153,242,.08);pointer-events:none}
-.si-mark-orbit-two{inset:14% -5%;border-color:rgba(176,142,244,.09);transform:rotate(45deg) rotateY(70deg)}
-.si-mark-core{position:absolute;inset:0;transform-style:preserve-3d;transform:translate3d(var(--si-x,0px),calc(var(--si-y,0px) + var(--si-scroll-y,0px)),0) rotateX(var(--si-rx,0deg)) rotateY(var(--si-ry,0deg));transition:transform .48s cubic-bezier(.16,1,.3,1);will-change:transform}
-.si-mark-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(10px 28px 14px rgba(0,0,0,.63)) drop-shadow(0 0 24px rgba(57,146,235,.2));transform:translateZ(35px)}
-.si-mark-svg text{paint-order:stroke fill;dominant-baseline:auto}
-.si-depth-layer{fill:#151c36;stroke:#101c35;stroke-width:9;transform:translate(19px,21px);opacity:.95}
-.si-edge-layer{fill:#29446a;stroke:url(#si-edge-metal);stroke-width:9;transform:translate(7px,8px)}
-.si-face-layer{fill:url(#si-metal);stroke:#e0f2ff;stroke-width:1;opacity:0}
-.si-outline-layer{fill:none;stroke:#d1f5ff;stroke-width:2.2;stroke-dasharray:2800;stroke-dashoffset:2800;opacity:.86}
-.si-specular-layer{fill:none;stroke:url(#si-reflection);stroke-width:2;opacity:.48;transform:translate(-3px,-4px)}
-.si-initial-i{position:absolute;right:5%;top:16%;display:inline-block;color:#e7f6ff;font:800 clamp(2.7rem,7vw,6.5rem)/1 'Syne',sans-serif;text-shadow:0 0 26px rgba(68,186,250,.6),0 6px 12px rgba(0,0,0,.3);transform:translateZ(65px)}
-.si-i-dot{position:absolute;display:block;width:66%;height:3px;bottom:-10px;left:17%;background:linear-gradient(90deg,transparent,#98e8ff,transparent);box-shadow:0 0 14px #75cfff}
-.si-mark-flare{position:absolute;top:21%;right:13%;width:40%;height:1px;transform:rotate(-35deg) translateZ(75px);background:linear-gradient(90deg,transparent,rgba(227,250,255,.85),transparent);filter:drop-shadow(0 0 8px #6fdaff);opacity:0}
-.si-mark-coordinate{position:absolute;color:rgba(208,226,255,.54);font:500 .62rem/1.4 'JetBrains Mono',monospace;letter-spacing:.14em;white-space:nowrap}
-.si-coordinate-top{top:14%;left:3%}.si-coordinate-bottom{bottom:11%;right:3%;letter-spacing:.1em}
-.si-stage-caption{position:absolute;bottom:5%;left:50%;transform:translateX(-50%);font:500 .71rem/1.4 'Manrope',sans-serif;letter-spacing:.13em;color:rgba(227,239,255,.65);white-space:nowrap}
-.si-hero-copy{position:relative;z-index:3;min-width:0;padding-top:18px}
-.si-overline{display:flex;align-items:center;flex-wrap:wrap;gap:11px;margin:0 0 28px;font:600 .69rem/1.5 'JetBrains Mono',monospace;letter-spacing:.13em;color:#b7c7da}
-.si-overline-dot{width:7px;height:7px;border-radius:50%;background:#6ed9f5;box-shadow:0 0 14px #54c9fa}.si-overline-divider{color:#6993bd}
-.si-hero-title{font-family:'Syne',sans-serif!important;font-size:clamp(2.5rem,4.2vw,5.45rem)!important;font-weight:800;line-height:1.02!important;letter-spacing:-.055em;color:#fff;margin:0!important;max-width:11ch}
-.si-hero-title>span{display:block}
-.si-hero-title-accent{font-size:.8em;line-height:1.18;color:#cbd9e9}
-.si-title-period{color:#7ce3ff}
-.si-hero-description{margin-top:25px;max-width:42ch;color:rgba(232,240,251,.78);font:500 clamp(.95rem,1.05vw,1.13rem)/1.72 'Manrope',sans-serif}
-.si-hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:13px;margin-top:33px}
-.si-main-cta,.si-quiet-cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:0 20px;border-radius:12px;font:700 .86rem/1 'Manrope',sans-serif;transition:transform .3s var(--ease),background .3s,border-color .3s,box-shadow .3s}
-.si-main-cta{background:#f1f5fb;color:#091223;border:1px solid rgba(255,255,255,.35);box-shadow:0 8px 40px rgba(70,143,238,.17)}
-.si-main-cta:hover{background:#fff;transform:translateY(-3px);box-shadow:0 12px 45px rgba(119,197,255,.25)}
-.si-quiet-cta{color:#ebf3ff;border:1px solid rgba(214,233,255,.27);background:rgba(255,255,255,.06);backdrop-filter:blur(8px)}
-.si-quiet-cta:hover{background:rgba(255,255,255,.13);border-color:rgba(226,241,255,.52);transform:translateY(-3px)}
-.si-main-cta svg,.si-quiet-cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.si-hero-bottom{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:end;width:100%;color:rgba(225,238,255,.64);font:500 .67rem/1.4 'JetBrains Mono',monospace;letter-spacing:.14em}
-.si-bottom-location{text-align:right}
-.si-scroll-invite{display:flex;align-items:center;gap:15px;font-size:.64rem;white-space:nowrap;transition:color .3s}
-.si-scroll-invite:hover{color:#fff}.si-scroll-stem{display:block;position:relative;width:67px;height:1px;background:rgba(197,225,246,.34);overflow:hidden}.si-scroll-stem:before{content:"";position:absolute;left:-35%;top:0;height:1px;width:35%;background:#e0faff;animation:siLineTravel 2.6s ease-in-out infinite}
-body.ready .si-mark-shell{animation:siMarkArrive 1.55s cubic-bezier(.16,1,.3,1) .05s both}
-body.ready .si-face-layer{animation:siFaceShine 1.15s cubic-bezier(.16,1,.3,1) .36s both}
-body.ready .si-outline-layer{animation:siDraw 1.8s cubic-bezier(.2,.65,.2,1) .18s forwards}
-body.ready .si-mark-flare{animation:siLightPass 2.2s ease-in-out .65s 1 both}
-body.ready .si-hero-copy>*{animation:siCopyRise .85s cubic-bezier(.2,.8,.2,1) both}
-body.ready .si-hero-copy>:nth-child(1){animation-delay:.36s}
-body.ready .si-hero-copy>:nth-child(2){animation-delay:.53s}
-body.ready .si-hero-copy>:nth-child(3){animation-delay:.71s}
-body.ready .si-hero-copy>:nth-child(4){animation-delay:.88s}
-@keyframes siMarkArrive{0%{opacity:0;filter:blur(16px);transform:translateY(50px) scale(.81) rotate(-6deg)}55%{opacity:1;filter:blur(1px);transform:translateY(-6px) scale(1.035) rotate(1deg)}100%{opacity:1;filter:blur(0);transform:translateY(0) scale(1) rotate(0)}}
-@keyframes siFaceShine{0%{opacity:0;filter:brightness(2);transform:translateY(18px)}100%{opacity:1;filter:brightness(1);transform:translateY(0)}}
-@keyframes siDraw{to{stroke-dashoffset:0}}
-@keyframes siLightPass{0%,100%{opacity:0;transform:translateX(-40%) rotate(-35deg)}50%{opacity:1;transform:translateX(38%) rotate(-35deg)}}
-@keyframes siCopyRise{from{opacity:0;filter:blur(7px);transform:translateY(22px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
-@keyframes siLineTravel{to{left:100%}}
-@media(min-width:1500px){.si-hero-title{font-size:5.5rem!important}}
-@media(max-width:1050px){
-  .si-cinematic .scene-frame.si-frame{padding-inline:30px}
-  .si-hero-main{grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:8px}
-  .si-mark-shell{width:min(48vw,54svh)}
-  .si-hero-title{font-size:clamp(2.5rem,4.7vw,4.1rem)!important}
-  .si-stage-caption{bottom:4%}
-}
-@media(max-width:700px){
-  .si-cinematic .scene-frame.si-frame{padding:calc(82px + env(safe-area-inset-top,0px)) 22px calc(24px + env(safe-area-inset-bottom,0px));min-height:100svh}
-  .si-hero-main{grid-template-columns:1fr;grid-template-rows:auto auto;gap:0;align-content:center}
-  .si-hero-art{min-height:0}
-  .si-mark-shell{width:min(58vw,33svh,260px);margin:0 auto}
-  .si-initial-i{font-size:clamp(1.7rem,7vw,3rem)}
-  .si-stage-caption,.si-mark-coordinate{display:none}
-  .si-hero-copy{text-align:center;padding:0}
-  .si-overline{justify-content:center;gap:7px;margin-bottom:14px;font-size:.57rem}
-  .si-hero-title{font-size:clamp(2.25rem,8vw,3.5rem)!important;max-width:none}
-  .si-hero-description{margin:13px auto 0;max-width:36ch;font-size:.88rem;line-height:1.55}
-  .si-hero-actions{justify-content:center;gap:9px;margin-top:22px}
-  .si-main-cta,.si-quiet-cta{min-height:44px;padding:0 14px;font-size:.74rem}
-  .si-hero-bottom{grid-template-columns:1fr auto;margin-top:18px;font-size:.55rem}
-  .si-bottom-id{display:none}.si-scroll-invite{font-size:.57rem}.si-scroll-stem{width:27px}
-}
-@media(max-width:370px){.si-hero-title{font-size:2rem!important}.si-mark-shell{width:min(52vw,28svh)}.si-main-cta,.si-quiet-cta{padding:0 11px}.si-overline{font-size:.5rem}}
-@media(max-height:690px) and (min-width:701px){.si-mark-shell{width:min(34vw,61svh)}.si-hero-art{min-height:0}.si-hero-title{font-size:clamp(2.4rem,4vw,4.5rem)!important}}
-@media(max-height:650px) and (max-width:700px){.si-mark-shell{width:min(38vw,21svh)}.si-hero-title{font-size:clamp(1.8rem,7vw,2.5rem)!important}.si-hero-description{font-size:.78rem}.si-hero-actions{margin-top:12px}.si-cinematic .scene-frame.si-frame{padding-top:70px}}
-@media(prefers-reduced-motion:reduce){
-  .si-mark-shell{opacity:1!important;filter:none!important;transform:none!important;animation:none!important}
-  .si-face-layer{opacity:1!important;filter:none!important;transform:none!important;animation:none!important}
-  .si-outline-layer{stroke-dashoffset:0!important;animation:none!important}
-  .si-mark-flare{opacity:.4!important;animation:none!important}
-  .si-mark-core{transform:none!important;transition:none!important;will-change:auto}
-  .si-hero-copy>*{opacity:1!important;filter:none!important;transform:none!important;animation:none!important}
-  .si-scroll-stem:before{animation:none!important;left:33%}
-}
-
 </style>
 </head>
 <body class="film-layout">
-<noscript><style>.loader{display:none}.hero-copy > *,.stage-card,.float-chip,.reveal,.si-mark-shell,.si-face-layer,.si-hero-copy>*{opacity:1!important;transform:none!important}.si-outline-layer{stroke-dashoffset:0!important}</style></noscript>
+<noscript><style>.loader{display:none}.hero-copy > *,.stage-card,.float-chip,.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <div class="bg" aria-hidden="true"></div>
 
 <!-- shared SVG defs (gradients, patterns, project covers) -->
@@ -773,16 +666,15 @@ body.ready .si-hero-copy>:nth-child(4){animation-delay:.88s}
 
 <div class="loader" id="loader" aria-hidden="true">
   <div class="loader-inner">
-    <div class="loader-monogram" aria-hidden="true">S<span>I</span></div>
     <div class="loader-name">SABIR IAZZA</div>
     <div class="loader-bar"><i id="loader-fill"></i></div>
-    <div class="loader-hint">La signature prend forme</div>
+    <div class="loader-hint">Initialisation de la scène 3D</div>
   </div>
 </div>
 <div class="progress" id="progress" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
-  <a class="brand" href="#top" aria-label="Retour en haut"><span class="brand-si" aria-hidden="true">S<span>I</span></span>SABIR</a>
+  <a class="brand" href="#top" aria-label="Retour en haut"><i></i>SABIR</a>
   <ul class="nav-links" id="nav-links">
     <li><a href="#about">À propos</a></li>
     <li><a href="#skills">Compétences</a></li>
@@ -816,76 +708,18 @@ body.ready .si-hero-copy>:nth-child(4){animation-delay:.88s}
 
 <main id="top">
 
-  <!-- ================= HERO — SI CINEMATIC SIGNATURE ================= -->
-  <section class="hero prompt-scene si-cinematic" aria-label="Introduction cinématique au portfolio de Sabir IAZZA">
+  <!-- ================= HERO ================= -->
+  <section class="hero prompt-scene" aria-label="Bande-annonce interactive de Sabir IAZZA">
     <img class="scene-backdrop" src="sabir-cinematic-lake.png" alt="" aria-hidden="true" fetchpriority="high">
     <span class="scene-backdrop-glow" aria-hidden="true"></span>
-    <div class="si-film-grain" aria-hidden="true"></div>
-    <div class="scene-frame si-frame">
-      <div class="si-hero-main">
-        <div class="si-hero-art" aria-hidden="true">
-          <div class="si-mark-shell">
-            <span class="si-mark-halo"></span>
-            <span class="si-mark-orbit si-mark-orbit-one"></span>
-            <span class="si-mark-orbit si-mark-orbit-two"></span>
-            <span class="si-mark-coordinate si-coordinate-top">S / 01</span>
-            <div class="si-mark-core">
-              <svg class="si-mark-svg" viewBox="0 0 540 640" xmlns="http://www.w3.org/2000/svg" focusable="false">
-                <defs>
-                  <linearGradient id="si-metal" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#f4f9ff"/>
-                    <stop offset=".18" stop-color="#bad2e3"/>
-                    <stop offset=".36" stop-color="#52647e"/>
-                    <stop offset=".49" stop-color="#f4f7ff"/>
-                    <stop offset=".62" stop-color="#9ca5d8"/>
-                    <stop offset=".82" stop-color="#5ec6ef"/>
-                    <stop offset="1" stop-color="#f6faff"/>
-                  </linearGradient>
-                  <linearGradient id="si-edge-metal" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#dceafe"/>
-                    <stop offset=".55" stop-color="#7d73d4"/>
-                    <stop offset="1" stop-color="#4ce6ff"/>
-                  </linearGradient>
-                  <linearGradient id="si-reflection" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
-                    <stop offset=".45" stop-color="#ffffff" stop-opacity=".9"/>
-                    <stop offset=".53" stop-color="#ffffff" stop-opacity=".98"/>
-                    <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <g class="si-monogram-shape" font-family="Syne, Manrope, sans-serif" font-weight="800" font-size="520" letter-spacing="-22">
-                  <text class="si-depth-layer" x="83" y="518">S</text>
-                  <text class="si-edge-layer" x="83" y="518">S</text>
-                  <text class="si-face-layer" x="83" y="518">S</text>
-                  <text class="si-outline-layer" x="83" y="518">S</text>
-                  <text class="si-specular-layer" x="83" y="518">S</text>
-                </g>
-              </svg>
-              <span class="si-initial-i">I<span class="si-i-dot"></span></span>
-              <span class="si-mark-flare"></span>
-            </div>
-            <span class="si-mark-coordinate si-coordinate-bottom">SABIR / DIGITAL FORM</span>
-          </div>
-          <span class="si-stage-caption">Une signature. Des expériences.</span>
-        </div>
-        <div class="si-hero-copy">
-          <p class="si-overline"><span class="si-overline-dot"></span> SABIR IAZZA <span class="si-overline-divider">/</span> PORTFOLIO 2026</p>
-          <h1 class="si-hero-title">
-            <span>Décris ton</span>
-            <span>projet.</span>
-            <span class="si-hero-title-accent">Je le rends réel<span class="si-title-period">.</span></span>
-          </h1>
-          <p class="si-hero-description">Je crée des expériences web et des solutions numériques où le design rencontre la technique.</p>
-          <div class="si-hero-actions">
-            <a class="si-main-cta" href="#projects">Explorer mes projets <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a class="si-quiet-cta" href="#contact">Parlons de votre idée <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
-          </div>
-        </div>
+    <div class="scene-frame">
+      <div class="scene-center">
+        <p class="scene-overline">Sabir IAZZA — Digital Studio</p>
+        <h1 class="scene-title">Décris ton projet.<br>Je le rends réel.</h1>
       </div>
-      <div class="si-hero-bottom">
-        <span class="si-bottom-id">WEB / IT / CRÉATION</span>
-        <a href="#projects" class="si-scroll-invite" aria-label="Défiler vers les projets">SCROLLER POUR EXPLORER <span class="si-scroll-stem"></span></a>
-        <span class="si-bottom-location">LYON · FRANCE</span>
+      <div>
+        <p class="scene-proof">Du concept au produit, avec soin.</p>
+        <div class="scene-credentials" aria-label="Domaines de Sabir"><span>WEB</span><span>SYSTÈMES</span><span>CRÉATION</span></div>
       </div>
     </div>
   </section>
@@ -1367,24 +1201,6 @@ function finishLoad(){
 if(document.readyState === 'complete') setTimeout(finishLoad, hasSeenIntro ? 0 : 380); else window.addEventListener('load', () => setTimeout(finishLoad, hasSeenIntro ? 0 : 380));
 setTimeout(finishLoad, hasSeenIntro ? 120 : 950);
 
-/* Gentle parallax, with no animation framework or perpetual render loop. */
-const signatureZone = document.querySelector('.si-hero-art');
-const signatureMark = document.querySelector('.si-mark-core');
-if(signatureZone && signatureMark && finePointer && !reduceMotion){
-  signatureZone.addEventListener('pointermove', e => {
-    const r = signatureZone.getBoundingClientRect();
-    const x = clamp((e.clientX-r.left)/r.width*2-1, -1, 1);
-    const y = clamp((e.clientY-r.top)/r.height*2-1, -1, 1);
-    signatureMark.style.setProperty('--si-x', (x*9).toFixed(1)+'px');
-    signatureMark.style.setProperty('--si-y', (y*7).toFixed(1)+'px');
-    signatureMark.style.setProperty('--si-rx', (-y*7).toFixed(1)+'deg');
-    signatureMark.style.setProperty('--si-ry', (x*10).toFixed(1)+'deg');
-  }, {passive:true});
-  signatureZone.addEventListener('pointerleave', () => {
-    for(const prop of ['--si-x','--si-y','--si-rx','--si-ry'])signatureMark.style.removeProperty(prop);
-  });
-}
-
 /* ===================== Hero director ===================== */
 const hero = $('.hero'), sceneCaption = $('#scene-caption');
 const heroScenes = {
@@ -1415,13 +1231,11 @@ const nav = $('#nav'), progress = $('#progress'), toTop = $('#to-top');
 const heroCanvas = $('#hero-canvas'), heroStage = $('.hero-stage');
 let lastY = window.scrollY, ticking = false, menuOpen = false;
 function updateHero(y){
+  if(!heroCanvas) return;
   const f = clamp(y / (window.innerHeight * .95), 0, 1);
-  if(heroCanvas){
-    heroCanvas.style.opacity = (.82 * (1-f)).toFixed(3);
-    heroCanvas.style.transform = 'translateY(' + (y*.3).toFixed(1) + 'px)';
-  }
-  if(heroStage) heroStage.style.transform = 'translateY(' + (y*.12).toFixed(1) + 'px)';
-  if(signatureMark && !reduceMotion) signatureMark.style.setProperty('--si-scroll-y', (-f*46).toFixed(1)+'px');
+  heroCanvas.style.opacity = (.82 * (1 - f)).toFixed(3);
+  heroCanvas.style.transform = 'translateY(' + (y * .3).toFixed(1) + 'px)';
+  if(heroStage) heroStage.style.transform = 'translateY(' + (y * .12).toFixed(1) + 'px)';
 }
 function onScroll(){
   const y = window.scrollY;
